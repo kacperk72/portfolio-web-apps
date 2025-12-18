@@ -1,0 +1,356 @@
+.page {
+  padding: 28px 28px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navlink {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.88rem;
+}
+
+.navlink:hover {
+  color: var(--text);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 12px;
+
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text);
+
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 78%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
+}
+
+.toplink {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.toplink:hover {
+  color: var(--text);
+}
+
+.section {
+  margin-top: 10px;
+}
+
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  letter-spacing: -0.04em;
+  font-weight: 650;
+}
+
+.h2 {
+  margin: 0;
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+  letter-spacing: -0.03em;
+  font-weight: 650;
+}
+
+.about {
+  position: relative;
+  margin-top: 10px;
+  padding: 22px 22px 26px;
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--surface) 22%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border) 45%, transparent);
+  overflow: hidden;
+}
+
+.avatar {
+  position: absolute;
+  z-index: 2;
+  top: 16px;
+  right: 16px;
+  width: 74px;
+  height: 74px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--surface) 60%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+  box-shadow: 0 18px 40px color-mix(in srgb, var(--bg) 65%, transparent);
+}
+
+.avatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: radial-gradient(
+      520px 320px at 78% 18%,
+      color-mix(in srgb, var(--glow) 22%, transparent) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      520px 320px at 88% 34%,
+      color-mix(in srgb, #7c3aed 18%, transparent) 0%,
+      transparent 62%
+    );
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.hero,
+.aboutGrid {
+  position: relative;
+  z-index: 1;
+}
+
+.hero {
+  max-width: 760px;
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+  padding: 0 10px;
+  margin-bottom: 10px;
+
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
+}
+
+.heroTitle {
+  margin: 0;
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  letter-spacing: -0.04em;
+  font-weight: 650;
+}
+
+.heroLead {
+  margin: 10px 0 0;
+  font-size: 1.02rem;
+  color: var(--text);
+  opacity: 0.95;
+}
+
+.heroText {
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 18px;
+  margin-top: 20px;
+  align-items: start;
+}
+
+.statement {
+  margin: 0;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  letter-spacing: -0.05em;
+  font-weight: 650;
+  color: color-mix(in srgb, var(--text) 92%, white);
+}
+
+.aboutCards {
+  display: grid;
+  gap: 12px;
+}
+
+.serviceCard {
+  padding: 14px 14px;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--surface) 45%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+}
+
+.serviceTitle {
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.serviceText {
+  margin-top: 6px;
+  color: var(--muted);
+  line-height: 1.5;
+  font-size: 0.92rem;
+}
+
+.experience {
+  margin-top: 18px;
+  padding: 18px 2px 6px;
+}
+
+.expGrid {
+  display: grid;
+  grid-template-columns: 1.6fr 0.8fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.timeline {
+  display: grid;
+  gap: 12px;
+}
+
+.expItem {
+  position: relative;
+  padding: 14px;
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--surface) 22%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border) 45%, transparent);
+}
+
+.expBadge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  text-align: right;
+  background: color-mix(in srgb, var(--surface) 58%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+}
+
+.expBadgeLabel {
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+.expBadgeValue {
+  margin-top: 2px;
+  font-size: 0.92rem;
+  font-weight: 650;
+  color: var(--text);
+}
+
+.expTop {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-right: 150px;
+}
+
+.expRole {
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.expPeriod {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.expCompany {
+  margin-top: 2px;
+  color: color-mix(in srgb, var(--muted) 88%, white);
+  font-size: 0.92rem;
+}
+
+.expList {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.stack {
+  padding: 14px;
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--surface) 22%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border) 45%, transparent);
+}
+
+.stackTitle {
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  color: var(--text);
+  background: color-mix(in srgb, var(--surface) 55%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+}
+
+@media (max-width: 900px) {
+  .page {
+    padding: 18px 16px 48px;
+  }
+
+  .nav {
+    gap: 12px;
+  }
+
+  .about {
+    padding: 18px 16px 18px;
+  }
+
+  .avatar {
+    width: 62px;
+    height: 62px;
+    top: 14px;
+    right: 14px;
+  }
+
+  .aboutGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .expGrid {
+    grid-template-columns: 1fr;
+  }
+}

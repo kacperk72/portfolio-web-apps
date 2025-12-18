@@ -1,0 +1,86 @@
+<div class="page">
+  <header class="topbar">
+    <div class="pill">PORTFOLIO</div>
+    <nav class="nav" aria-label="Sekcje">
+      <a class="navlink" href="#about">O mnie</a>
+      <a class="navlink" href="#experience">Doświadczenie</a>
+      <a class="navlink" href="#works">Projekty</a>
+    </nav>
+  </header>
+
+  <section class="about" id="about">
+    <div class="avatar" aria-hidden="true">
+      <img class="avatarImg" [src]="about.avatarSrc" [alt]="about.avatarAlt" />
+    </div>
+
+    <div class="hero">
+      <div class="kicker">FULL‑FEATURED WEB SERVICES</div>
+      <h1 class="heroTitle">Cześć, jestem {{ about.name }}.</h1>
+      <p class="heroLead">{{ about.title }}</p>
+      <p class="heroText">{{ about.lead }}</p>
+    </div>
+
+    <div class="aboutGrid">
+      <div class="aboutMain">
+        <h2 class="statement">{{ about.statement }}</h2>
+      </div>
+
+      <div class="aboutCards" aria-label="Obszary">
+        @for (s of services; track s.title) {
+        <article class="serviceCard">
+          <div class="serviceTitle">{{ s.title }}</div>
+          <div class="serviceText">{{ s.description }}</div>
+        </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="experience" id="experience">
+    <div class="section-head">
+      <h2 class="h2">Moje doświadczenie</h2>
+    </div>
+
+    <div class="expGrid">
+      <div class="timeline" aria-label="Timeline">
+        @for (e of experience; track e.id) {
+        <article class="expItem">
+          <div class="expBadge" aria-label="Doświadczenie od stażu">
+            <div class="expBadgeLabel">Doświadczenie</div>
+            <div class="expBadgeValue">{{ totalExperience }}</div>
+          </div>
+
+          <div class="expTop">
+            <div class="expRole">{{ e.role }}</div>
+            <div class="expPeriod">{{ e.period }}</div>
+          </div>
+          <div class="expCompany">{{ e.company }}</div>
+
+          <ul class="expList">
+            @for (h of e.highlights; track h) {
+            <li>{{ h }}</li>
+            }
+          </ul>
+        </article>
+        }
+      </div>
+
+      <aside class="stack" aria-label="Stack">
+        <div class="stackTitle">Stack</div>
+        <div class="tags">
+          @for (t of stack; track t) {
+          <span class="tag">{{ t }}</span>
+          }
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" id="works">
+    <div class="section-head">
+      <h1 class="h1">Projekty</h1>
+    </div>
+
+    <app-works-grid [items]="works" />
+  </section>
+</div>

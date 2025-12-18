@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0d10"/>
+      <stop offset="0.55" stop-color="#101827"/>
+      <stop offset="1" stop-color="#0b0d10"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111827" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#0f172a" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#10b981"/>
+      <stop offset="1" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f59e0b"/>
+      <stop offset="1" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="28" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+
+  <!-- simplified dashboard preview (stylized) -->
+  <g filter="url(#shadow)">
+    <rect x="170" y="120" width="1260" height="760" rx="22" fill="url(#card)" stroke="#2b3240" stroke-opacity="0.7"/>
+
+    <!-- top bar -->
+    <rect x="170" y="120" width="1260" height="74" rx="22" fill="#0b1220" fill-opacity="0.75"/>
+    <text x="220" y="167" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="28" fill="#6ef3ff" font-weight="700">App-car</text>
+    <rect x="590" y="142" width="520" height="34" rx="17" fill="#0f172a" stroke="#2b3240"/>
+    <text x="612" y="166" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="14" fill="#a8b0bf">Czego szukasz?</text>
+
+    <!-- sidebar -->
+    <rect x="170" y="194" width="290" height="686" rx="0" fill="#0b1220" fill-opacity="0.55" stroke="#2b3240" stroke-opacity="0.6"/>
+    <rect x="198" y="244" width="234" height="46" rx="12" fill="#0f172a" stroke="#3b82f6" stroke-opacity="0.55"/>
+    <text x="238" y="274" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="14" fill="#93c5fd">Dashboard</text>
+    <text x="238" y="336" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="14" fill="#a8b0bf">Moje auta</text>
+    <text x="198" y="406" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="12" fill="#64748b" font-weight="700" letter-spacing="0.08em">BIBLIOTEKA</text>
+    <text x="238" y="460" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="14" fill="#a8b0bf">Historia napraw</text>
+    <text x="238" y="514" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="14" fill="#a8b0bf">Przypomnienia</text>
+    <text x="238" y="568" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="14" fill="#a8b0bf">Prognozy AI</text>
+
+    <!-- main content -->
+    <text x="520" y="310" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="34" fill="#e7eaf0" font-weight="700">Szybkie akcje</text>
+
+    <rect x="520" y="350" width="380" height="122" rx="18" fill="url(#green)"/>
+    <rect x="930" y="350" width="380" height="122" rx="18" fill="url(#blue)"/>
+    <rect x="1340" y="350" width="0" height="0" rx="0" fill="none"/>
+    <rect x="1340" y="350" width="0" height="0" rx="0" fill="none"/>
+    <rect x="1340" y="350" width="0" height="0" rx="0" fill="none"/>
+    <rect x="1340" y="350" width="0" height="0" rx="0" fill="none"/>
+
+    <rect x="1340" y="350" width="0" height="0" rx="0" fill="none"/>
+
+    <rect x="1340" y="350" width="0" height="0" rx="0" fill="none"/>
+
+    <rect x="1340" y="350" width="0" height="0" rx="0" fill="none"/>
+
+    <rect x="520" y="492" width="380" height="122" rx="18" fill="url(#purple)"/>
+    <rect x="930" y="492" width="380" height="122" rx="18" fill="url(#orange)"/>
+
+    <text x="560" y="418" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="18" fill="#ffffff" font-weight="700">Dodaj naprawę</text>
+    <text x="560" y="444" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="14" fill="#ffffff" opacity="0.9">Zarejestruj nowy serwis</text>
+
+    <text x="970" y="418" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="18" fill="#ffffff" font-weight="700">Historia napraw</text>
+    <text x="970" y="444" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="14" fill="#ffffff" opacity="0.9">Przeglądaj serwisy</text>
+
+    <text x="560" y="560" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="18" fill="#ffffff" font-weight="700">Prognozy AI</text>
+    <text x="560" y="586" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="14" fill="#ffffff" opacity="0.9">Inteligentne analizy</text>
+
+    <text x="970" y="560" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="18" fill="#ffffff" font-weight="700">Przypomnienia</text>
+    <text x="970" y="586" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="14" fill="#ffffff" opacity="0.9">Nadchodzące terminy</text>
+
+    <rect x="520" y="670" width="790" height="176" rx="18" fill="#0f172a" stroke="#2b3240"/>
+    <text x="560" y="722" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="22" fill="#e7eaf0" font-weight="700">Ostatnie serwisy</text>
+    <rect x="560" y="748" width="290" height="12" rx="6" fill="#ffffff" opacity="0.12"/>
+    <rect x="560" y="772" width="360" height="12" rx="6" fill="#ffffff" opacity="0.10"/>
+  </g>
+
+  <!-- label to match gallery vibe -->
+  <g opacity="0.12" fill="#ffffff">
+    <text x="120" y="955" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="120" font-weight="800">App-car</text>
+  </g>
+</svg>

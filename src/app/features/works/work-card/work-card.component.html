@@ -1,0 +1,20 @@
+<a
+  class="card"
+  [href]="item().href"
+  [attr.target]="target()"
+  [attr.rel]="rel()"
+  [ngStyle]="gridStyle()"
+>
+  <div class="media" aria-hidden="true">
+    <img class="img" [src]="item().coverSrc" [attr.alt]="item().coverAlt ?? ''" loading="lazy" />
+  </div>
+
+  <div class="overlay" aria-hidden="true"></div>
+
+  <div class="meta">
+    <div class="title">{{ item().title }}</div>
+    @if (item().year) {
+    <div class="year">© {{ item().year }}</div>
+    }
+  </div>
+</a>
