@@ -19,7 +19,7 @@ export class HomePage {
     items: ReadonlyArray<{ label: string; icon: StackIcon }>;
   }> = [
     {
-      title: 'Commercial',
+      title: 'Komercyjnie',
       items: [
         { label: 'Angular v14 – v21', icon: 'angular' },
         { label: 'Angular Material, PrimeNG, Chart.js', icon: 'ui' },
@@ -27,13 +27,13 @@ export class HomePage {
         { label: 'Electron, WebSockets', icon: 'desktop' },
         { label: 'JavaScript, TypeScript, HTML, CSS, SCSS', icon: 'lang' },
         { label: 'GIT (GitLab/GitHub), JIRA, CI/CD, Google Workspace, Figma', icon: 'tools' },
-        { label: 'AI tools: GitHub Copilot, Google Gemini, ChatGPT, Claude Code', icon: 'ai' },
-        { label: 'E2E testing: Playwright (with Agents)', icon: 'e2e' },
-        { label: 'Unit tests: Vitest', icon: 'unit' },
+        { label: 'Narzędzia AI: GitHub Copilot, Google Gemini, ChatGPT, Claude Code', icon: 'ai' },
+        { label: 'Testy E2E: Playwright (z Agentami)', icon: 'e2e' },
+        { label: 'Testy jednostkowe: Vitest', icon: 'unit' },
       ],
     },
     {
-      title: 'Non-Commercial',
+      title: 'Niekomercyjnie',
       items: [
         { label: 'Node.js, Express.js, Nest.js', icon: 'backend' },
         { label: 'MongoDB, Supabase, MySQL', icon: 'db' },
@@ -47,7 +47,7 @@ export class HomePage {
     title: 'Tworzę nowoczesne aplikacje webowe w Angularze.',
     lead: 'Ukończyłem studia magisterskie na kierunku Informatyka Stosowana na Uniwersytecie Jagiellońskim. Obecnie pracuję jako Front-end Developer w Comarch, gdzie rozwijam system raportowy do ewidencji czasu pracy i generowania raportów — dopasowany zarówno do potrzeb małych, jak i dużych firm.',
     statement:
-      'Na co dzień pracuję w najnowszych wersjach Angulara, dbając o jakość, wydajność i nowoczesny UX. Mam doświadczenie w projektach z sektora ERP i współtworzę skalowalne, przyjazne dla użytkownika rozwiązania.',
+      'Na co dzień pracuję w najnowszych wersjach Angulara, dbając o jakość, wydajność i nowoczesny UX. Mam doświadczenie w projektach z sektora ERP i współtworzę skalowalne, przyjazne dla użytkownika rozwiązania. Z pasją śledzę rozwój sztucznej inteligencji i wdrażam jej możliwości do codziennej pracy, aby stale podnosić produktywność oraz efektywność dostarczanych systemów.',
     avatarSrc: '/profile/profilowe-animowane-min.png',
     avatarAlt: 'Zdjęcie profilowe',
   };
@@ -59,11 +59,10 @@ export class HomePage {
       company: 'Comarch',
       period: 'mar 2023 — obecnie',
       highlights: [
-        'Rozwijam widoki i integracje (m.in. integracja z nowym operatorem płatności) w aplikacji ERP.',
-        'Współtworzę produkt dla nowego klienta; praca w dynamicznie rozwijającym się projekcie.',
         'Na co dzień współpracuję z UX oraz backendem, dbając o dopracowany UX i potrzeby biznesowe.',
         'Modernizuję i refaktoruję aplikację: aktualizacje bibliotek, poprawa architektury i utrzymywalności kodu.',
         'Zmodernizowałem projekt (Angular 14 → 20): migracja do standalone components, OnPush oraz Signals; redukcja zależności od zone.js.',
+        'Współtworzę produkt dla nowego klienta; praca w dynamicznie rozwijającym się projekcie.',
         'Świadomie korzystam z narzędzi AI (GitHub Copilot, ChatGPT, Google Gemini) w celu zwiększenia efektywności i jakości pracy.',
       ],
     },
@@ -77,7 +76,7 @@ export class HomePage {
         'Rozwój wewnętrznego modułu aplikacji: zbieranie statystyk z aplikacji i prezentacja ich w widoku.',
         'Tworzenie wykresów i czytelnej wizualizacji danych (m.in. Chart.js).',
         'Pisanie testów jednostkowych dla modułu statystyk (Jasmine, Karma).',
-        'Realizacja i utrzymanie aplikacji w Angularze (m.in. Angular 15).',
+        'Realizacja i utrzymanie aplikacji w Angularze (Angular 15).',
       ],
     },
   ] as const;
