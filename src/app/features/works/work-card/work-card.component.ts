@@ -1,11 +1,12 @@
 import { NgStyle } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { WorkItem } from '../works.model';
 
 @Component({
   selector: 'app-work-card',
   standalone: true,
-  imports: [NgStyle],
+  imports: [NgStyle, TranslateModule],
   templateUrl: './work-card.component.html',
   styleUrl: './work-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

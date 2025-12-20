@@ -1,0 +1,96 @@
+{
+  "NAV": {
+    "ABOUT": "About",
+    "EXPERIENCE": "Experience",
+    "WORKS": "Projects"
+  },
+  "ARIA": {
+    "SECTIONS": "Sections",
+    "TIMELINE": "Timeline",
+    "TOTAL_EXPERIENCE": "Total work experience",
+    "MY_LINKEDIN": "My LinkedIn profile"
+  },
+  "HERO": {
+    "KICKER": "FRONT-END DEVELOPER ANGULAR",
+    "GREETING": "Hi, I'm",
+    "NAME": "Kacper",
+    "TITLE": "I create modern web applications with Angular.",
+    "LEAD": "I graduated with a Master's degree in Applied Computer Science from Jagiellonian University. Currently, I work as a Front-end Developer at Comarch, where I develop a reporting system for time tracking and report generation — tailored to the needs of both small and large companies.",
+    "STATEMENT": "I work daily with the latest versions of Angular, focusing on quality, performance, and modern UX. I have experience in ERP sector projects and co-create scalable, user-friendly solutions. I passionately follow the development of artificial intelligence and implement its capabilities into everyday work to continuously improve productivity and efficiency of delivered systems.",
+    "AVATAR_ALT": "Profile photo"
+  },
+  "SOCIAL": {
+    "FIND_ME": "Find me on:",
+    "LINKEDIN": "LinkedIn"
+  },
+  "SKILLS": {
+    "TITLE": "Skills",
+    "COMMERCIAL": "Commercial",
+    "NON_COMMERCIAL": "Non-commercial"
+  },
+  "STACK": {
+    "ANGULAR": "Angular v14 – v21",
+    "UI_LIBS": "Angular Material, PrimeNG, Chart.js",
+    "STATE": "NgRx, RxJS, Signals",
+    "DESKTOP": "Electron, WebSockets",
+    "LANGUAGES": "JavaScript, TypeScript, HTML, CSS, SCSS",
+    "TOOLS": "GIT (GitLab/GitHub), JIRA, CI/CD, Google Workspace, Figma",
+    "AI_TOOLS": "AI Tools: GitHub Copilot, Google Gemini, ChatGPT, Claude Code",
+    "E2E_TESTS": "E2E Tests: Playwright (with Agents)",
+    "UNIT_TESTS": "Unit Tests: Vitest",
+    "BACKEND": "Node.js, Express.js, Nest.js",
+    "DATABASE": "MongoDB, Supabase, MySQL",
+    "DOCKER": "Docker"
+  },
+  "EXPERIENCE_SECTION": {
+    "TITLE": "My Experience",
+    "TOTAL_LABEL": "Work experience",
+    "MONTHS_SHORT": "mo.",
+    "YEAR_1": "year",
+    "YEAR_2_4": "years",
+    "YEAR_5": "years"
+  },
+  "JOBS": {
+    "COMARCH_CLOUD": {
+      "ROLE": "Frontend Developer — Comarch Cloud (TNA)",
+      "COMPANY": "Comarch",
+      "PERIOD": "Mar 2023 — Present",
+      "HIGHLIGHT_1": "I collaborate daily with UX and backend teams, ensuring refined UX and meeting business needs.",
+      "HIGHLIGHT_2": "I modernize and refactor the application: library updates, architecture improvements, and code maintainability.",
+      "HIGHLIGHT_3": "I modernized the project (Angular 14 → 20): migration to standalone components, OnPush, and Signals; reduced dependency on zone.js.",
+      "HIGHLIGHT_4": "I co-create a product for a new client; working in a dynamically developing project.",
+      "HIGHLIGHT_5": "I consciously use AI tools (GitHub Copilot, ChatGPT, Google Gemini) to increase work efficiency and quality."
+    },
+    "COMARCH_HEALTHCARE": {
+      "ROLE": "Frontend Developer — Comarch Healthcare",
+      "COMPANY": "Comarch",
+      "PERIOD": "Jul 2022 — Mar 2023",
+      "HIGHLIGHT_1": "Onboarding to the organization and working with tools: Jira and GitLab.",
+      "HIGHLIGHT_2": "Development of an internal application module: collecting statistics from the application and presenting them in a view.",
+      "HIGHLIGHT_3": "Creating charts and clear data visualization (including Chart.js).",
+      "HIGHLIGHT_4": "Writing unit tests for the statistics module (Jasmine, Karma).",
+      "HIGHLIGHT_5": "Implementation and maintenance of the application in Angular (Angular 15)."
+    }
+  },
+  "WORKS_SECTION": {
+    "TITLE": "Projects"
+  },
+  "WORKS": {
+    "APP_1": {
+      "TITLE": "My Web App #1 - coming soon",
+      "COVER_ALT": "Abstract cover image"
+    },
+    "APP_2": {
+      "TITLE": "App-car (dashboard)",
+      "COVER_ALT": "App-car dashboard preview"
+    },
+    "APP_3": {
+      "TITLE": "My Web App #3 - coming soon",
+      "COVER_ALT": "Abstract cover image"
+    },
+    "APP_4": {
+      "TITLE": "My Web App #4 - coming soon",
+      "COVER_ALT": "Abstract cover image"
+    }
+  }
+}

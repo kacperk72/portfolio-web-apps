@@ -1,50 +1,51 @@
 <div class="page">
   <header class="topbar">
     <div></div>
-    <nav class="nav" aria-label="Sekcje">
-      <a class="navlink" href="#about">O mnie</a>
-      <a class="navlink" href="#experience">Doświadczenie</a>
-      <a class="navlink" href="#works">Projekty</a>
+    <nav class="nav" [attr.aria-label]="'ARIA.SECTIONS' | translate">
+      <a class="navlink" href="#about">{{ 'NAV.ABOUT' | translate }}</a>
+      <a class="navlink" href="#experience">{{ 'NAV.EXPERIENCE' | translate }}</a>
+      <a class="navlink" href="#works">{{ 'NAV.WORKS' | translate }}</a>
+      <app-language-switcher />
     </nav>
   </header>
 
   <section class="about" id="about">
     <div class="avatar" aria-hidden="true">
-      <img class="avatarImg" [src]="about.avatarSrc" [alt]="about.avatarAlt" />
+      <img class="avatarImg" [src]="about().avatarSrc" [alt]="about().avatarAlt" />
     </div>
 
     <div class="hero">
-      <div class="kicker">FRONT-END DEVELOPER ANGULAR</div>
-      <h1 class="heroTitle">Cześć, jestem {{ about.name }}.</h1>
-      <p class="heroLead">{{ about.title }}</p>
-      <p class="heroText">{{ about.lead }}</p>
+      <div class="kicker">{{ 'HERO.KICKER' | translate }}</div>
+      <h1 class="heroTitle">{{ 'HERO.GREETING' | translate }} {{ about().name }}.</h1>
+      <p class="heroLead">{{ about().title }}</p>
+      <p class="heroText">{{ about().lead }}</p>
     </div>
 
     <div class="aboutGrid">
       <div class="aboutMain">
-        <h2 class="statement">{{ about.statement }}</h2>
+        <h2 class="statement">{{ about().statement }}</h2>
         <div class="socialSection">
-          <p class="socialLabel">Znajdziesz mnie na:</p>
+          <p class="socialLabel">{{ 'SOCIAL.FIND_ME' | translate }}</p>
           <a
             class="socialLink"
             href="https://www.linkedin.com/in/kacper-kubit-707862224/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Mój profil LinkedIn"
+            [attr.aria-label]="'ARIA.MY_LINKEDIN' | translate"
           >
             <svg class="socialIcon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path
                 d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"
               />
             </svg>
-            <span class="socialLinkText">LinkedIn</span>
+            <span class="socialLinkText">{{ 'SOCIAL.LINKEDIN' | translate }}</span>
           </a>
         </div>
       </div>
 
       <div class="aboutCards">
-        <h2 class="skillsTitle">Umiejętności</h2>
-        @for (section of stackSections; track section.title; let i = $index) {
+        <h2 class="skillsTitle">{{ 'SKILLS.TITLE' | translate }}</h2>
+        @for (section of stackSections(); track section.title; let i = $index) {
         <section class="stackCard" [attr.aria-labelledby]="'stackSectionTitle-' + i">
           <h3 class="stackCardTitle" [id]="'stackSectionTitle-' + i">{{ section.title }}</h3>
           <ul class="stackList">
@@ -246,16 +247,16 @@
 
   <section class="experience" id="experience">
     <div class="section-head">
-      <h2 class="h2">Moje doświadczenie</h2>
-      <div class="expBadge" aria-label="Całkowite doświadczenie zawodowe">
-        <div class="expBadgeLabel">Doświadczenie zawodowe</div>
-        <div class="expBadgeValue">{{ totalExperience }}</div>
+      <h2 class="h2">{{ 'EXPERIENCE_SECTION.TITLE' | translate }}</h2>
+      <div class="expBadge" [attr.aria-label]="'ARIA.TOTAL_EXPERIENCE' | translate">
+        <div class="expBadgeLabel">{{ 'EXPERIENCE_SECTION.TOTAL_LABEL' | translate }}</div>
+        <div class="expBadgeValue">{{ totalExperience() }}</div>
       </div>
     </div>
 
     <div class="expGrid">
-      <div class="timeline" aria-label="Timeline">
-        @for (e of experience; track e.id) {
+      <div class="timeline" [attr.aria-label]="'ARIA.TIMELINE' | translate">
+        @for (e of experience(); track e.id) {
         <article class="expItem">
           <div class="expTop">
             <div class="expRole">{{ e.role }}</div>
@@ -276,7 +277,7 @@
 
   <section class="section" id="works">
     <div class="section-head">
-      <h1 class="h1">Projekty</h1>
+      <h1 class="h1">{{ 'WORKS_SECTION.TITLE' | translate }}</h1>
     </div>
 
     <app-works-grid [items]="works" />

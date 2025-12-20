@@ -6,13 +6,18 @@
   [ngStyle]="gridStyle()"
 >
   <div class="media" aria-hidden="true">
-    <img class="img" [src]="item().coverSrc" [attr.alt]="item().coverAlt ?? ''" loading="lazy" />
+    <img
+      class="img"
+      [src]="item().coverSrc"
+      [attr.alt]="item().coverAltKey ? (item().coverAltKey | translate) : ''"
+      loading="lazy"
+    />
   </div>
 
   <div class="overlay" aria-hidden="true"></div>
 
   <div class="meta">
-    <div class="title">{{ item().title }}</div>
+    <div class="title">{{ item().titleKey | translate }}</div>
     @if (item().year) {
     <div class="year">© {{ item().year }}</div>
     }

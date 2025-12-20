@@ -1,98 +1,136 @@
-import { NgOptimizedImage } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  effect,
+  signal,
+  inject,
+} from '@angular/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { WorksGridComponent } from '../../features/works/works-grid/works-grid.component';
 import { WORKS } from '../../features/works/works.data';
+import { LanguageSwitcherComponent } from '../../shared/language-switcher/language-switcher.component';
 
 @Component({
   selector: 'app-home-page',
-  imports: [NgOptimizedImage, WorksGridComponent],
+  imports: [WorksGridComponent, TranslateModule, LanguageSwitcherComponent],
   templateUrl: './home.page.html',
   styleUrl: './home.page.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomePage {
+  private readonly translate = inject(TranslateService);
   private readonly experienceStart = new Date(2022, 6, 1);
-  protected readonly totalExperience = this.formatDuration(this.experienceStart, new Date());
 
-  protected readonly stackSections: ReadonlyArray<{
-    title: string;
-    items: ReadonlyArray<{ label: string; icon: StackIcon }>;
-  }> = [
-    {
-      title: 'Komercyjnie',
-      items: [
-        { label: 'Angular v14 – v21', icon: 'angular' },
-        { label: 'Angular Material, PrimeNG, Chart.js', icon: 'ui' },
-        { label: 'NgRx, RxJS, Signals', icon: 'state' },
-        { label: 'Electron, WebSockets', icon: 'desktop' },
-        { label: 'JavaScript, TypeScript, HTML, CSS, SCSS', icon: 'lang' },
-        { label: 'GIT (GitLab/GitHub), JIRA, CI/CD, Google Workspace, Figma', icon: 'tools' },
-        { label: 'Narzędzia AI: GitHub Copilot, Google Gemini, ChatGPT, Claude Code', icon: 'ai' },
-        { label: 'Testy E2E: Playwright (z Agentami)', icon: 'e2e' },
-        { label: 'Testy jednostkowe: Vitest', icon: 'unit' },
-      ],
-    },
-    {
-      title: 'Niekomercyjnie',
-      items: [
-        { label: 'Node.js, Express.js, Nest.js', icon: 'backend' },
-        { label: 'MongoDB, Supabase, MySQL', icon: 'db' },
-        { label: 'Docker', icon: 'docker' },
-      ],
-    },
-  ];
+  private readonly translationsLoaded = signal<boolean>(false);
 
-  protected readonly about = {
-    name: 'Kacper',
-    title: 'Tworzę nowoczesne aplikacje webowe w Angularze.',
-    lead: 'Ukończyłem studia magisterskie na kierunku Informatyka Stosowana na Uniwersytecie Jagiellońskim. Obecnie pracuję jako Front-end Developer w Comarch, gdzie rozwijam system raportowy do ewidencji czasu pracy i generowania raportów — dopasowany zarówno do potrzeb małych, jak i dużych firm.',
-    statement:
-      'Na co dzień pracuję w najnowszych wersjach Angulara, dbając o jakość, wydajność i nowoczesny UX. Mam doświadczenie w projektach z sektora ERP i współtworzę skalowalne, przyjazne dla użytkownika rozwiązania. Z pasją śledzę rozwój sztucznej inteligencji i wdrażam jej możliwości do codziennej pracy, aby stale podnosić produktywność oraz efektywność dostarczanych systemów.',
-    avatarSrc: '/profile/profilowe-animowane-min.png',
-    avatarAlt: 'Zdjęcie profilowe',
-  };
+  constructor() {
+    // Wait for translations to load
+    this.translate.get('HERO.NAME').subscribe(() => {
+      this.translationsLoaded.set(true);
+    });
 
-  protected readonly experience = [
-    {
-      id: 'comarch-cloud-tna',
-      role: 'Frontend Developer — Comarch Cloud (TNA)',
-      company: 'Comarch',
-      period: 'mar 2023 — obecnie',
-      highlights: [
-        'Na co dzień współpracuję z UX oraz backendem, dbając o dopracowany UX i potrzeby biznesowe.',
-        'Modernizuję i refaktoruję aplikację: aktualizacje bibliotek, poprawa architektury i utrzymywalności kodu.',
-        'Zmodernizowałem projekt (Angular 14 → 20): migracja do standalone components, OnPush oraz Signals; redukcja zależności od zone.js.',
-        'Współtworzę produkt dla nowego klienta; praca w dynamicznie rozwijającym się projekcie.',
-        'Świadomie korzystam z narzędzi AI (GitHub Copilot, ChatGPT, Google Gemini) w celu zwiększenia efektywności i jakości pracy.',
-      ],
-    },
-    {
-      id: 'comarch-healthcare',
-      role: 'Frontend Developer — Comarch Healthcare',
-      company: 'Comarch',
-      period: 'lip 2022 — mar 2023',
-      highlights: [
-        'Wdrożenie do organizacji i praca z narzędziami: Jira oraz GitLab.',
-        'Rozwój wewnętrznego modułu aplikacji: zbieranie statystyk z aplikacji i prezentacja ich w widoku.',
-        'Tworzenie wykresów i czytelnej wizualizacji danych (m.in. Chart.js).',
-        'Pisanie testów jednostkowych dla modułu statystyk (Jasmine, Karma).',
-        'Realizacja i utrzymanie aplikacji w Angularze (Angular 15).',
-      ],
-    },
-  ] as const;
+    // Update signal when language changes
+    this.translate.onLangChange.subscribe((event) => {
+      this.translationsLoaded.set(false);
+      setTimeout(() => this.translationsLoaded.set(true), 50);
+    });
+  }
 
-  protected readonly stack = ['Angular', 'TypeScript', 'SCSS', 'RxJS', 'REST'] as const;
+  protected readonly totalExperience = computed(() => {
+    if (!this.translationsLoaded()) return '';
+    return this.formatDuration(this.experienceStart, new Date());
+  });
+
+  protected readonly stackSections = computed(() => {
+    if (!this.translationsLoaded()) return [];
+    return [
+      {
+        title: this.translate.instant('SKILLS.COMMERCIAL'),
+        items: [
+          { label: this.translate.instant('STACK.ANGULAR'), icon: 'angular' as const },
+          { label: this.translate.instant('STACK.UI_LIBS'), icon: 'ui' as const },
+          { label: this.translate.instant('STACK.STATE'), icon: 'state' as const },
+          { label: this.translate.instant('STACK.DESKTOP'), icon: 'desktop' as const },
+          { label: this.translate.instant('STACK.LANGUAGES'), icon: 'lang' as const },
+          { label: this.translate.instant('STACK.TOOLS'), icon: 'tools' as const },
+          { label: this.translate.instant('STACK.AI_TOOLS'), icon: 'ai' as const },
+          { label: this.translate.instant('STACK.E2E_TESTS'), icon: 'e2e' as const },
+          { label: this.translate.instant('STACK.UNIT_TESTS'), icon: 'unit' as const },
+        ],
+      },
+      {
+        title: this.translate.instant('SKILLS.NON_COMMERCIAL'),
+        items: [
+          { label: this.translate.instant('STACK.BACKEND'), icon: 'backend' as const },
+          { label: this.translate.instant('STACK.DATABASE'), icon: 'db' as const },
+          { label: this.translate.instant('STACK.DOCKER'), icon: 'docker' as const },
+        ],
+      },
+    ];
+  });
+
+  protected readonly about = computed(() => {
+    if (!this.translationsLoaded())
+      return { name: '', title: '', lead: '', statement: '', avatarSrc: '', avatarAlt: '' };
+    return {
+      name: this.translate.instant('HERO.NAME'),
+      title: this.translate.instant('HERO.TITLE'),
+      lead: this.translate.instant('HERO.LEAD'),
+      statement: this.translate.instant('HERO.STATEMENT'),
+      avatarSrc: '/profile/profilowe-animowane-min.png',
+      avatarAlt: this.translate.instant('HERO.AVATAR_ALT'),
+    };
+  });
+
+  protected readonly experience = computed(() => {
+    if (!this.translationsLoaded()) return [];
+    return [
+      {
+        id: 'comarch-cloud-tna',
+        role: this.translate.instant('JOBS.COMARCH_CLOUD.ROLE'),
+        company: this.translate.instant('JOBS.COMARCH_CLOUD.COMPANY'),
+        period: this.translate.instant('JOBS.COMARCH_CLOUD.PERIOD'),
+        highlights: [
+          this.translate.instant('JOBS.COMARCH_CLOUD.HIGHLIGHT_1'),
+          this.translate.instant('JOBS.COMARCH_CLOUD.HIGHLIGHT_2'),
+          this.translate.instant('JOBS.COMARCH_CLOUD.HIGHLIGHT_3'),
+          this.translate.instant('JOBS.COMARCH_CLOUD.HIGHLIGHT_4'),
+          this.translate.instant('JOBS.COMARCH_CLOUD.HIGHLIGHT_5'),
+        ],
+      },
+      {
+        id: 'comarch-healthcare',
+        role: this.translate.instant('JOBS.COMARCH_HEALTHCARE.ROLE'),
+        company: this.translate.instant('JOBS.COMARCH_HEALTHCARE.COMPANY'),
+        period: this.translate.instant('JOBS.COMARCH_HEALTHCARE.PERIOD'),
+        highlights: [
+          this.translate.instant('JOBS.COMARCH_HEALTHCARE.HIGHLIGHT_1'),
+          this.translate.instant('JOBS.COMARCH_HEALTHCARE.HIGHLIGHT_2'),
+          this.translate.instant('JOBS.COMARCH_HEALTHCARE.HIGHLIGHT_3'),
+          this.translate.instant('JOBS.COMARCH_HEALTHCARE.HIGHLIGHT_4'),
+          this.translate.instant('JOBS.COMARCH_HEALTHCARE.HIGHLIGHT_5'),
+        ],
+      },
+    ];
+  });
 
   protected readonly works = WORKS;
 
   private formatDuration(start: Date, end: Date): string {
+    if (!this.translationsLoaded()) return '';
+
     const monthsTotal = this.fullMonthsBetween(start, end);
     const years = Math.floor(monthsTotal / 12);
     const months = monthsTotal % 12;
 
     const parts: string[] = [];
-    if (years > 0) parts.push(`${years} ${this.plYear(years)}`);
-    parts.push(`${months} mies.`);
+    if (years > 0) {
+      const yearKey = this.getYearTranslationKey(years);
+      parts.push(`${years} ${this.translate.instant(yearKey)}`);
+    }
+    const monthsShort = this.translate.instant('EXPERIENCE_SECTION.MONTHS_SHORT');
+    parts.push(`${months} ${monthsShort}`);
     return parts.join(' ');
   }
 
@@ -107,12 +145,15 @@ export class HomePage {
     return Math.max(0, months);
   }
 
-  private plYear(n: number): string {
+  private getYearTranslationKey(n: number): string {
     const mod10 = n % 10;
     const mod100 = n % 100;
-    if (n === 1) return 'rok';
-    if (mod10 >= 2 && mod10 <= 4 && !(mod100 >= 12 && mod100 <= 14)) return 'lata';
-    return 'lat';
+
+    if (n === 1) return 'EXPERIENCE_SECTION.YEAR_1';
+    if (mod10 >= 2 && mod10 <= 4 && !(mod100 >= 12 && mod100 <= 14)) {
+      return 'EXPERIENCE_SECTION.YEAR_2_4';
+    }
+    return 'EXPERIENCE_SECTION.YEAR_5';
   }
 }
 

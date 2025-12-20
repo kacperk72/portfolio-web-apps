@@ -1,0 +1,46 @@
+<div class="langSwitcher">
+  <button
+    class="langButton"
+    type="button"
+    (click)="toggleDropdown()"
+    [attr.aria-expanded]="isOpen()"
+    aria-label="Wybierz język / Select language"
+    aria-haspopup="true"
+  >
+    <span class="langLabel">{{ currentLang().toUpperCase() }}</span>
+    <svg
+      class="langIcon"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+      [class.langIconOpen]="isOpen()"
+    >
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+  </button>
+
+  @if (isOpen()) {
+  <div class="langDropdown" role="menu">
+    @for (lang of languages; track lang.code) {
+    <button
+      class="langOption"
+      type="button"
+      role="menuitem"
+      [class.langOptionActive]="currentLang() === lang.code"
+      (click)="selectLanguage(lang.code)"
+      [attr.aria-label]="'Switch to ' + lang.label"
+    >
+      {{ lang.label }}
+    </button>
+    }
+  </div>
+  }
+</div>
+
+@if (isOpen()) {
+<div class="langBackdrop" (click)="closeDropdown()" aria-hidden="true"></div>
+}
