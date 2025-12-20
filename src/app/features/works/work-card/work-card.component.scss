@@ -38,18 +38,7 @@
 .overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-      900px 600px at 70% 20%,
-      color-mix(in srgb, var(--glow) 35%, transparent) 0%,
-      transparent 60%
-    ),
-    linear-gradient(
-      180deg,
-      transparent 0%,
-      color-mix(in srgb, var(--bg) 85%, transparent) 60%,
-      var(--bg) 100%
-    );
-  opacity: 0.9;
+  background-repeat: no-repeat;
   transition: opacity 260ms ease;
 }
 

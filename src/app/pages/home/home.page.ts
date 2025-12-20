@@ -1,54 +1,83 @@
+import { NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { WorksGridComponent } from '../../features/works/works-grid/works-grid.component';
 import { WORKS } from '../../features/works/works.data';
 
 @Component({
   selector: 'app-home-page',
-  standalone: true,
-  imports: [WorksGridComponent],
+  imports: [NgOptimizedImage, WorksGridComponent],
   templateUrl: './home.page.html',
   styleUrl: './home.page.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomePage {
+  private readonly experienceStart = new Date(2022, 6, 1);
+  protected readonly totalExperience = this.formatDuration(this.experienceStart, new Date());
+
+  protected readonly stackSections: ReadonlyArray<{
+    title: string;
+    items: ReadonlyArray<{ label: string; icon: StackIcon }>;
+  }> = [
+    {
+      title: 'Commercial',
+      items: [
+        { label: 'Angular v14 – v21', icon: 'angular' },
+        { label: 'Angular Material, PrimeNG, Chart.js', icon: 'ui' },
+        { label: 'NgRx, RxJS, Signals', icon: 'state' },
+        { label: 'Electron, WebSockets', icon: 'desktop' },
+        { label: 'JavaScript, TypeScript, HTML, CSS, SCSS', icon: 'lang' },
+        { label: 'GIT (GitLab/GitHub), JIRA, CI/CD, Google Workspace, Figma', icon: 'tools' },
+        { label: 'AI tools: GitHub Copilot, Google Gemini, ChatGPT, Claude Code', icon: 'ai' },
+        { label: 'E2E testing: Playwright (with Agents)', icon: 'e2e' },
+        { label: 'Unit tests: Vitest', icon: 'unit' },
+      ],
+    },
+    {
+      title: 'Non-Commercial',
+      items: [
+        { label: 'Node.js, Express.js, Nest.js', icon: 'backend' },
+        { label: 'MongoDB, Supabase, MySQL', icon: 'db' },
+        { label: 'Docker', icon: 'docker' },
+      ],
+    },
+  ];
+
   protected readonly about = {
-    name: 'Kacper Kubit',
+    name: 'Kacper',
     title: 'Tworzę nowoczesne aplikacje webowe w Angularze.',
     lead: 'Ukończyłem studia magisterskie na kierunku Informatyka Stosowana na Uniwersytecie Jagiellońskim. Obecnie pracuję jako Front-end Developer w Comarch, gdzie rozwijam system raportowy do ewidencji czasu pracy i generowania raportów — dopasowany zarówno do potrzeb małych, jak i dużych firm.',
     statement:
       'Na co dzień pracuję w najnowszych wersjach Angulara, dbając o jakość, wydajność i nowoczesny UX. Mam doświadczenie w projektach z sektora ERP i współtworzę skalowalne, przyjazne dla użytkownika rozwiązania.',
-    avatarSrc: '/profile/avatar.svg',
+    avatarSrc: '/profile/profilowe-animowane-min.png',
     avatarAlt: 'Zdjęcie profilowe',
   };
 
-  protected readonly services = [
-    {
-      title: 'Aplikacje webowe',
-      description: 'Aplikacje SPA, dashboardy, portale i narzędzia wewnętrzne dla biznesu.',
-    },
-    {
-      title: 'Systemy ERP i raportowanie',
-      description: 'Tworzenie czytelnych widoków, procesów i raportów dla użytkowników końcowych.',
-    },
-    {
-      title: 'Jakość i wydajność',
-      description: 'Nowoczesny Angular, czysty kod, performance, skalowalność i użyteczność.',
-    },
-  ] as const;
-
-  private readonly experienceStart = new Date(2022, 6, 1); // lipiec 2022 (staż)
-  protected readonly totalExperience = this.formatDuration(this.experienceStart, new Date());
-
   protected readonly experience = [
     {
-      id: 'comarch',
-      role: 'Front-end Developer',
+      id: 'comarch-cloud-tna',
+      role: 'Frontend Developer — Comarch Cloud (TNA)',
       company: 'Comarch',
-      period: 'lip 2022 — obecnie',
+      period: 'mar 2023 — obecnie',
       highlights: [
-        'Rozwój systemu raportowego do ewidencji czasu pracy oraz generowania raportów.',
-        'Projekty w obszarze ERP: skalowalność, utrzymanie oraz dopracowany UX.',
-        'Praca w najnowszych wersjach Angulara; nacisk na jakość i wydajność.',
+        'Rozwijam widoki i integracje (m.in. integracja z nowym operatorem płatności) w aplikacji ERP.',
+        'Współtworzę produkt dla nowego klienta; praca w dynamicznie rozwijającym się projekcie.',
+        'Na co dzień współpracuję z UX oraz backendem, dbając o dopracowany UX i potrzeby biznesowe.',
+        'Modernizuję i refaktoruję aplikację: aktualizacje bibliotek, poprawa architektury i utrzymywalności kodu.',
+        'Zmodernizowałem projekt (Angular 14 → 20): migracja do standalone components, OnPush oraz Signals; redukcja zależności od zone.js.',
+        'Świadomie korzystam z narzędzi AI (GitHub Copilot, ChatGPT, Google Gemini) w celu zwiększenia efektywności i jakości pracy.',
+      ],
+    },
+    {
+      id: 'comarch-healthcare',
+      role: 'Frontend Developer — Comarch Healthcare',
+      company: 'Comarch',
+      period: 'lip 2022 — mar 2023',
+      highlights: [
+        'Wdrożenie do organizacji i praca z narzędziami: Jira oraz GitLab.',
+        'Rozwój wewnętrznego modułu aplikacji: zbieranie statystyk z aplikacji i prezentacja ich w widoku.',
+        'Tworzenie wykresów i czytelnej wizualizacji danych (m.in. Chart.js).',
+        'Pisanie testów jednostkowych dla modułu statystyk (Jasmine, Karma).',
+        'Realizacja i utrzymanie aplikacji w Angularze (m.in. Angular 15).',
       ],
     },
   ] as const;
@@ -87,3 +116,17 @@ export class HomePage {
     return 'lat';
   }
 }
+
+type StackIcon =
+  | 'ai'
+  | 'angular'
+  | 'backend'
+  | 'db'
+  | 'desktop'
+  | 'docker'
+  | 'e2e'
+  | 'lang'
+  | 'state'
+  | 'tools'
+  | 'ui'
+  | 'unit';
