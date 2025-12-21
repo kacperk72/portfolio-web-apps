@@ -77,12 +77,12 @@
   },
   "WORKS": {
     "APP_1": {
-      "TITLE": "My Web App #1 - coming soon",
-      "COVER_ALT": "Abstract cover image"
+      "TITLE": "GraveMap",
+      "COVER_ALT": "Podgląd aplikacji GraveMap"
     },
     "APP_2": {
-      "TITLE": "App-car (dashboard)",
-      "COVER_ALT": "App-car dashboard preview"
+      "TITLE": "AutoPuls",
+      "COVER_ALT": "Podgląd dashboardu AutoPuls"
     },
     "APP_3": {
       "TITLE": "My Web App #3 - coming soon",
