@@ -5,21 +5,16 @@
   [attr.rel]="rel()"
   [ngStyle]="gridStyle()"
 >
-  <div class="media" aria-hidden="true">
+  <div class="cardMedia">
     <img
-      class="img"
+      class="cardImage"
       [src]="item().coverSrc"
       [attr.alt]="item().coverAltKey ? (item().coverAltKey | translate) : ''"
       loading="lazy"
     />
   </div>
-
-  <div class="overlay" aria-hidden="true"></div>
-
-  <div class="meta">
-    <div class="title">{{ item().titleKey | translate }}</div>
-    @if (item().year) {
-    <div class="year">© {{ item().year }}</div>
-    }
+  <div class="cardBody">
+    <h3 class="cardTitle">{{ item().titleKey | translate }}</h3>
+    <p class="cardDescription">{{ item().descriptionKey | translate }}</p>
   </div>
 </a>

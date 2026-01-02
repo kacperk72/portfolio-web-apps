@@ -3,7 +3,7 @@ export type WorkLinkTarget = 'same-tab' | 'new-tab';
 export interface WorkItem {
   id: string;
   titleKey: string;
-  year?: string;
+  descriptionKey: string;
   href: string;
   coverSrc: string;
   coverAltKey?: string;

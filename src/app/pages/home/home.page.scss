@@ -1,10 +1,14 @@
 .page {
-  padding: 28px 28px 60px;
+  padding: 0 28px 60px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,6 +26,10 @@
   display: flex;
   align-items: center;
   gap: 16px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .langPicker {
@@ -94,6 +102,14 @@
 
 .section {
   margin-top: 10px;
+}
+
+.works {
+  margin-top: 4rem;
+}
+
+.courses {
+  margin-top: 4rem;
 }
 
 .section-head {

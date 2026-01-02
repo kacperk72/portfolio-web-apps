@@ -5,8 +5,11 @@
       <a class="navlink" href="#about">{{ 'NAV.ABOUT' | translate }}</a>
       <a class="navlink" href="#experience">{{ 'NAV.EXPERIENCE' | translate }}</a>
       <a class="navlink" href="#works">{{ 'NAV.WORKS' | translate }}</a>
+      <a class="navlink" href="#courses">{{ 'NAV.COURSES' | translate }}</a>
       <app-language-switcher />
     </nav>
+    <!-- Mobile Menu -->
+    <app-mobile-menu />
   </header>
 
   <section class="about" id="about">
@@ -275,11 +278,19 @@
     </div>
   </section>
 
-  <section class="section" id="works">
+  <section class="section works" id="works">
     <div class="section-head">
-      <h1 class="h1">{{ 'WORKS_SECTION.TITLE' | translate }}</h1>
+      <h1 class="h2">{{ 'WORKS_SECTION.TITLE' | translate }}</h1>
     </div>
 
     <app-works-grid [items]="works" />
+  </section>
+
+  <section class="section courses" id="courses">
+    <div class="section-head">
+      <h2 class="h2">{{ 'COURSES_SECTION.TITLE' | translate }}</h2>
+    </div>
+
+    <app-courses-grid [courses]="courses" />
   </section>
 </div>

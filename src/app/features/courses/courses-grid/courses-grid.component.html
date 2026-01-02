@@ -1,14 +1,14 @@
 <p-carousel
-  [value]="items()"
+  [value]="courses()"
   [numVisible]="3"
   [numScroll]="1"
   [circular]="true"
-  [autoplayInterval]="6000"
+  [autoplayInterval]="5000"
   [responsiveOptions]="responsiveOptions"
 >
-  <ng-template let-work #item>
+  <ng-template let-course #item>
     <div class="carousel-item">
-      <app-work-card [item]="work" />
+      <app-course-card [course]="course" />
     </div>
   </ng-template>
 </p-carousel>

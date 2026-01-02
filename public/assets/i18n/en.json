@@ -2,13 +2,16 @@
   "NAV": {
     "ABOUT": "About",
     "EXPERIENCE": "Experience",
-    "WORKS": "Projects"
+    "WORKS": "Projects",
+    "COURSES": "Courses",
+    "CONTACT": "Contact"
   },
   "ARIA": {
     "SECTIONS": "Sections",
     "TIMELINE": "Timeline",
     "TOTAL_EXPERIENCE": "Total work experience",
-    "MY_LINKEDIN": "My LinkedIn profile"
+    "MY_LINKEDIN": "My LinkedIn profile",
+    "VIEW_COURSE": "View course details"
   },
   "HERO": {
     "KICKER": "FRONT-END DEVELOPER ANGULAR",
@@ -78,19 +81,81 @@
   "WORKS": {
     "APP_1": {
       "TITLE": "GraveMap",
+      "DESCRIPTION": "An application for recording and navigating between graves of loved ones in the cemetery.",
       "COVER_ALT": "GraveMap application preview"
     },
     "APP_2": {
       "TITLE": "AutoPuls",
+      "DESCRIPTION": "Vehicle logbook application with additional AI features.",
       "COVER_ALT": "AutoPuls dashboard preview"
     },
     "APP_3": {
       "TITLE": "My Web App #3 - coming soon",
+      "DESCRIPTION": "Coming soon.",
       "COVER_ALT": "Abstract cover image"
     },
     "APP_4": {
       "TITLE": "My Web App #4 - coming soon",
-      "COVER_ALT": "Abstract cover image"
+      "DESCRIPTION": "Coming soon.",
+      "COVER_ALT": "Abstract cover image",
+      "COURSES_SECTION": {
+        "TITLE": "Completed Courses"
+      },
+      "COURSES": {
+        "WEB_DEV": {
+          "TITLE": "Web Development",
+          "DESCRIPTION": "Advanced CSS, JavaScript, Bootstrap",
+          "IMAGE_ALT": "Web development course logo"
+        },
+        "MEGAK": {
+          "TITLE": "MegaK",
+          "DESCRIPTION": "14-month course consisting of 9 stages of programming in various technologies such as JavaScript, Node, Express, TypeScript, React, NestJS, and knowledge of MySQL and MongoDB databases",
+          "IMAGE_ALT": "MegaK course logo"
+        },
+        "NODEJS": {
+          "TITLE": "NodeJS",
+          "DESCRIPTION": "13-hour NodeJS course covering Web Server, Layouts, MongoDB Database, Forms, Authentication, API, Deployment",
+          "IMAGE_ALT": "NodeJS course logo"
+        },
+        "GOOGLE_DATA": {
+          "TITLE": "Google Data Analyst",
+          "DESCRIPTION": "Exploring and Preparing your Data with BigQuery • Creating New BigQuery Datasets and Visualizing Insights • Achieving Advanced Insights with BigQuery • Applying Machine Learning to your Data with GCP",
+          "IMAGE_ALT": "Google Data Analyst course logo"
+        },
+        "GOOGLE_CLOUD": {
+          "TITLE": "Google Associate Cloud Engineer",
+          "DESCRIPTION": "Google Cloud Fundamentals: Core Infrastructure • Essential Google Cloud Infrastructure: Foundation • Essential Google Cloud Infrastructure: Core Services • Elastic Google Cloud Infrastructure: Scaling and Automation • Reliable Google Cloud Infrastructure: Design and Process",
+          "IMAGE_ALT": "Google Cloud Engineer course logo"
+        },
+        "ANGULAR_PERFORMANCE": {
+          "TITLE": "Angular Performance. Building High-Performance Angular Applications",
+          "DESCRIPTION": "Advanced course focused on optimizing Angular application performance. Covers Change Detection, OnPush, trackBy, lazy loading, bundle size optimization, tree shaking, and leveraging the latest Angular Signals techniques to create ultra-fast applications.",
+          "IMAGE_ALT": "Angular Performance course logo"
+        },
+        "ANGULAR_ADVANCED": {
+          "TITLE": "Angular – Advanced Course. SPA Web Application Framework",
+          "DESCRIPTION": "Comprehensive course on advanced Angular techniques. Routing, lazy loading modules, advanced reactive forms, dependency injection, HttpClient, RxJS operators, state management, and SPA application architecture following best practices.",
+          "IMAGE_ALT": "Advanced Angular course logo"
+        },
+        "ANGULAR_SSR": {
+          "TITLE": "Angular - Building SSR Applications. Latest Features in Angular Framework",
+          "DESCRIPTION": "Course dedicated to Server-Side Rendering in Angular. Angular Universal, hydration, SEO optimization, prerendering, transfer state, and the latest Angular features such as standalone components, inject(), input/output functions, and control flow.",
+          "IMAGE_ALT": "Angular SSR course logo"
+        }
+      }
     }
+  },
+  "FOOTER": {
+    "SOCIAL": {
+      "TITLE": "Connect with me"
+    },
+    "COPYRIGHT": "All rights reserved."
+  },
+  "MENU": {
+    "OPEN": "Open menu",
+    "CLOSE": "Close menu"
+  },
+  "NEWSLETTER": {
+    "SUBMIT": "Subscribe to newsletter"
   }
 }

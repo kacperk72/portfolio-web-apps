@@ -2,13 +2,16 @@
   "NAV": {
     "ABOUT": "O mnie",
     "EXPERIENCE": "Doświadczenie",
-    "WORKS": "Projekty"
+    "WORKS": "Projekty",
+    "COURSES": "Kursy",
+    "CONTACT": "Kontakt"
   },
   "ARIA": {
     "SECTIONS": "Sekcje",
     "TIMELINE": "Timeline",
     "TOTAL_EXPERIENCE": "Całkowite doświadczenie zawodowe",
-    "MY_LINKEDIN": "Mój profil LinkedIn"
+    "MY_LINKEDIN": "Mój profil LinkedIn",
+    "VIEW_COURSE": "Zobacz szczegóły kursu"
   },
   "HERO": {
     "KICKER": "FRONT-END DEVELOPER ANGULAR",
@@ -78,19 +81,81 @@
   "WORKS": {
     "APP_1": {
       "TITLE": "GraveMap",
+      "DESCRIPTION": "Aplikacja do zapisywania i nawigowania między grobami bliskich na cmentarzu.",
       "COVER_ALT": "Podgląd aplikacji GraveMap"
     },
     "APP_2": {
       "TITLE": "AutoPuls",
+      "DESCRIPTION": "Aplikacja dziennik pojazdu z dodatkowymi funkcjami AI.",
       "COVER_ALT": "Podgląd dashboardu AutoPuls"
     },
     "APP_3": {
       "TITLE": "My Web App #3 - coming soon",
+      "DESCRIPTION": "Wkrótce.",
       "COVER_ALT": "Abstract cover image"
     },
     "APP_4": {
       "TITLE": "My Web App #4 - coming soon",
+      "DESCRIPTION": "Wkrótce.",
       "COVER_ALT": "Abstract cover image"
     }
+  },
+  "COURSES_SECTION": {
+    "TITLE": "Kursy"
+  },
+  "COURSES": {
+    "WEB_DEV": {
+      "TITLE": "Tworzenie stron WWW",
+      "DESCRIPTION": "Zaawansowany CSS, JavaScript, Bootstrap",
+      "IMAGE_ALT": "Logo kursu tworzenia stron WWW"
+    },
+    "MEGAK": {
+      "TITLE": "MegaK",
+      "DESCRIPTION": "14-miesięczny kurs składający się z 9 etapów programowania w różnych technologiach takich jak JavaScript, Node, Express, TypeScript, React, NestJS oraz znajomości baz danych MySQL i MongoDB",
+      "IMAGE_ALT": "Logo kursu MegaK"
+    },
+    "NODEJS": {
+      "TITLE": "NodeJS",
+      "DESCRIPTION": "13-godzinny kurs NodeJS obejmujący Web Server, Layouty, Bazę danych MongoDB, Formularze, Logowanie, API, Deployment",
+      "IMAGE_ALT": "Logo kursu NodeJS"
+    },
+    "GOOGLE_DATA": {
+      "TITLE": "Google Data Analyst",
+      "DESCRIPTION": "Exploring and Preparing your Data with BigQuery • Creating New BigQuery Datasets and Visualizing Insights • Achieving Advanced Insights with BigQuery • Applying Machine Learning to your Data with GCP",
+      "IMAGE_ALT": "Logo kursu Google Data Analyst"
+    },
+    "GOOGLE_CLOUD": {
+      "TITLE": "Google Associate Cloud Engineer",
+      "DESCRIPTION": "Google Cloud Fundamentals: Core Infrastructure • Essential Google Cloud Infrastructure: Foundation • Essential Google Cloud Infrastructure: Core Services • Elastic Google Cloud Infrastructure: Scaling and Automation • Reliable Google Cloud Infrastructure: Design and Process",
+      "IMAGE_ALT": "Logo kursu Google Cloud Engineer"
+    },
+    "ANGULAR_PERFORMANCE": {
+      "TITLE": "Angular performance. Pisanie wydajnych aplikacji Angular",
+      "DESCRIPTION": "Kurs zaawansowany skupiający się na optymalizacji wydajności aplikacji Angular. Obejmuje Change Detection, OnPush, trackBy, lazy loading, optymalizację bundle size, tree shaking oraz wykorzystanie najnowszych technik Angular Signals do tworzenia ultra wydajnych aplikacji.",
+      "IMAGE_ALT": "Logo kursu Angular Performance"
+    },
+    "ANGULAR_ADVANCED": {
+      "TITLE": "Angular – kurs zaawansowany. Framework aplikacji internetowych SPA",
+      "DESCRIPTION": "Kompleksowy kurs zaawansowanych technik Angular. Routing, lazy loading modułów, zaawansowane formularze reaktywne, dependency injection, HttpClient, RxJS operators, state management oraz architektura aplikacji SPA zgodna z best practices.",
+      "IMAGE_ALT": "Logo kursu Angular Zaawansowany"
+    },
+    "ANGULAR_SSR": {
+      "TITLE": "Angular - tworzenie aplikacji SSR. Nowości w frameworku Angular",
+      "DESCRIPTION": "Kurs poświęcony Server-Side Rendering w Angular. Angular Universal, hydration, optymalizacja SEO, prerendering, transfer state oraz najnowsze funkcjonalności Angular takie jak standalone components, inject(), input/output functions i control flow.",
+      "IMAGE_ALT": "Logo kursu Angular SSR"
+    }
+  },
+  "FOOTER": {
+    "SOCIAL": {
+      "TITLE": "Znajdź mnie na"
+    },
+    "COPYRIGHT": "Wszelkie prawa zastrzeżone."
+  },
+  "MENU": {
+    "OPEN": "Otwórz menu",
+    "CLOSE": "Zamknij menu"
+  },
+  "NEWSLETTER": {
+    "SUBMIT": "Zapisz się do newslettera"
   }
 }

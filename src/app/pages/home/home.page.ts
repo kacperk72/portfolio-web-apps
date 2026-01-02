@@ -10,10 +10,19 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { WorksGridComponent } from '../../features/works/works-grid/works-grid.component';
 import { WORKS } from '../../features/works/works.data';
 import { LanguageSwitcherComponent } from '../../shared/language-switcher/language-switcher.component';
+import { CoursesGridComponent } from '../../features/courses/courses-grid/courses-grid.component';
+import { COURSES } from '../../features/courses/courses.data';
+import { MobileMenuComponent } from '../../shared/mobile-menu/mobile-menu.component';
 
 @Component({
   selector: 'app-home-page',
-  imports: [WorksGridComponent, TranslateModule, LanguageSwitcherComponent],
+  imports: [
+    WorksGridComponent,
+    CoursesGridComponent,
+    TranslateModule,
+    LanguageSwitcherComponent,
+    MobileMenuComponent,
+  ],
   templateUrl: './home.page.html',
   styleUrl: './home.page.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -116,6 +125,7 @@ export class HomePage {
   });
 
   protected readonly works = WORKS;
+  protected readonly courses = COURSES;
 
   private formatDuration(start: Date, end: Date): string {
     if (!this.translationsLoaded()) return '';

@@ -1,0 +1,68 @@
+import { CourseItem } from './courses.model';
+
+export const COURSES: CourseItem[] = [
+  {
+    id: 'angular-performance',
+    titleKey: 'COURSES.ANGULAR_PERFORMANCE.TITLE',
+    descriptionKey: 'COURSES.ANGULAR_PERFORMANCE.DESCRIPTION',
+    imageSrc: '/courses/angular.png',
+    imageAltKey: 'COURSES.ANGULAR_PERFORMANCE.IMAGE_ALT',
+    url: 'https://www.comarch.pl/szkolenia/najblizsze-szkolenia/?phrase=angular',
+  },
+  {
+    id: 'angular-advanced',
+    titleKey: 'COURSES.ANGULAR_ADVANCED.TITLE',
+    descriptionKey: 'COURSES.ANGULAR_ADVANCED.DESCRIPTION',
+    imageSrc: '/courses/angular.png',
+    imageAltKey: 'COURSES.ANGULAR_ADVANCED.IMAGE_ALT',
+    url: 'https://www.comarch.pl/szkolenia/najblizsze-szkolenia/?phrase=angular',
+  },
+  {
+    id: 'angular-ssr',
+    titleKey: 'COURSES.ANGULAR_SSR.TITLE',
+    descriptionKey: 'COURSES.ANGULAR_SSR.DESCRIPTION',
+    imageSrc: '/courses/angular.png',
+    imageAltKey: 'COURSES.ANGULAR_SSR.IMAGE_ALT',
+    url: 'https://www.comarch.pl/szkolenia/najblizsze-szkolenia/?phrase=angular',
+  },
+  {
+    id: 'web-dev',
+    titleKey: 'COURSES.WEB_DEV.TITLE',
+    descriptionKey: 'COURSES.WEB_DEV.DESCRIPTION',
+    imageSrc: '/courses/web.png',
+    imageAltKey: 'COURSES.WEB_DEV.IMAGE_ALT',
+    url: 'https://www.udemy.com/share/103dq83@40MgrBP7D81UamFPbEVR7A_QtMtTAKrttj9A6RCXAeueIXPrrFfZd_7GaYp4d1EG/',
+  },
+  {
+    id: 'megak',
+    titleKey: 'COURSES.MEGAK.TITLE',
+    descriptionKey: 'COURSES.MEGAK.DESCRIPTION',
+    imageSrc: '/courses/megak.png',
+    imageAltKey: 'COURSES.MEGAK.IMAGE_ALT',
+    url: 'https://www.megak.pl/',
+  },
+  {
+    id: 'nodejs',
+    titleKey: 'COURSES.NODEJS.TITLE',
+    descriptionKey: 'COURSES.NODEJS.DESCRIPTION',
+    imageSrc: '/courses/node.png',
+    imageAltKey: 'COURSES.NODEJS.IMAGE_ALT',
+    url: 'https://tworcastron.pl/kursy/node-kurs-kompletny',
+  },
+  {
+    id: 'google-data-analyst',
+    titleKey: 'COURSES.GOOGLE_DATA.TITLE',
+    descriptionKey: 'COURSES.GOOGLE_DATA.DESCRIPTION',
+    imageSrc: '/courses/google.png',
+    imageAltKey: 'COURSES.GOOGLE_DATA.IMAGE_ALT',
+    url: 'https://www.coursera.org/specializations/from-data-to-insights-google-cloud-platform',
+  },
+  {
+    id: 'google-cloud-engineer',
+    titleKey: 'COURSES.GOOGLE_CLOUD.TITLE',
+    descriptionKey: 'COURSES.GOOGLE_CLOUD.DESCRIPTION',
+    imageSrc: '/courses/google.png',
+    imageAltKey: 'COURSES.GOOGLE_CLOUD.IMAGE_ALT',
+    url: 'https://www.coursera.org/specializations/gcp-architecture',
+  },
+];

@@ -14,7 +14,7 @@ export const WORKS: WorkItem[] = [
   {
     id: 'app-1',
     titleKey: 'WORKS.APP_1.TITLE',
-    year: '2025',
+    descriptionKey: 'WORKS.APP_1.DESCRIPTION',
     href: 'https://darkgrey-octopus-623910.hostingersite.com',
     target: 'new-tab',
     coverSrc: '/works/grave-app.png',
@@ -24,7 +24,7 @@ export const WORKS: WorkItem[] = [
   {
     id: 'app-2',
     titleKey: 'WORKS.APP_2.TITLE',
-    year: '2025',
+    descriptionKey: 'WORKS.APP_2.DESCRIPTION',
     href: 'https://salmon-fly-255466.hostingersite.com/dashboard',
     target: 'new-tab',
     coverSrc: '/works/app-car-dashboard.svg',
@@ -34,7 +34,7 @@ export const WORKS: WorkItem[] = [
   {
     id: 'app-3',
     titleKey: 'WORKS.APP_3.TITLE',
-    year: '2025',
+    descriptionKey: 'WORKS.APP_3.DESCRIPTION',
     href: '#',
     target: 'same-tab',
     coverSrc: '/works/cover-04.svg',
@@ -44,7 +44,7 @@ export const WORKS: WorkItem[] = [
   {
     id: 'app-4',
     titleKey: 'WORKS.APP_4.TITLE',
-    year: '2025',
+    descriptionKey: 'WORKS.APP_4.DESCRIPTION',
     href: '#',
     target: 'same-tab',
     coverSrc: '/works/cover-05.svg',

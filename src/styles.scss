@@ -1,14 +1,19 @@
+@import 'primeicons/primeicons.css';
+
 :root {
   color-scheme: dark;
 
   --bg: #0b0d10;
   --surface: #111827;
   --text: #e7eaf0;
+  --text-secondary: #a8b0bf;
   --muted: #a8b0bf;
   --border: #2b3240;
   --glow: #6ef3ff;
+  --accent: #6ef3ff;
 
   --radius-lg: 18px;
+  --radius-sm: 4px;
 }
 
 * {

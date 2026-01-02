@@ -1,0 +1,45 @@
+<!-- Hamburger Button -->
+<button
+  class="hamburger"
+  type="button"
+  [class.is-open]="isOpen()"
+  (click)="toggle()"
+  [attr.aria-label]="isOpen() ? ('MENU.CLOSE' | translate) : ('MENU.OPEN' | translate)"
+  [attr.aria-expanded]="isOpen()"
+>
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>
+
+<!-- Mobile Menu Overlay -->
+@if (isOpen()) {
+<div class="menu-overlay" (click)="closeMenu()">
+  <div class="menu-container" (click)="$event.stopPropagation()">
+    <!-- Navigation -->
+    <nav class="menu-nav" [attr.aria-label]="'ARIA.SECTIONS' | translate">
+      <a class="menu-link" href="#about" (click)="onNavigate()">
+        <span class="menu-link-text">{{ 'NAV.ABOUT' | translate }}</span>
+        <span class="menu-link-dot"></span>
+      </a>
+      <a class="menu-link" href="#experience" (click)="onNavigate()">
+        <span class="menu-link-text">{{ 'NAV.EXPERIENCE' | translate }}</span>
+      </a>
+      <a class="menu-link" href="#works" (click)="onNavigate()">
+        <span class="menu-link-text">{{ 'NAV.WORKS' | translate }}</span>
+      </a>
+      <a class="menu-link" href="#courses" (click)="onNavigate()">
+        <span class="menu-link-text">{{ 'NAV.COURSES' | translate }}</span>
+      </a>
+      <a class="menu-link" href="#contact" (click)="onNavigate()">
+        <span class="menu-link-text">{{ 'NAV.CONTACT' | translate }}</span>
+      </a>
+    </nav>
+
+    <!-- Language Switcher -->
+    <div class="menu-footer">
+      <app-language-switcher />
+    </div>
+  </div>
+</div>
+}
