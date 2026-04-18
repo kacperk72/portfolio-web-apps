@@ -1,36 +1,70 @@
+<!-- ===== MOBILE SPLASH SCREEN ===== -->
+@if (splashVisible()) {
+  <div class="splash" [class.splashFadeOut]="splashFading()" (animationend)="onSplashDone()">
+    <video
+      #splashVideo
+      class="splashVideo"
+      autoplay
+      muted
+      playsinline
+      [attr.aria-label]="about().avatarAlt"
+    >
+      <source src="/profile/avatar-optimized.mp4" type="video/mp4" />
+    </video>
+  </div>
+}
+
 <div class="page">
+  <!-- ===== TOPBAR ===== -->
   <header class="topbar">
-    <div></div>
+    <div class="topbarBrand">
+      <span class="brandName">{{ about().name }}</span>
+      <span class="brandDot"></span>
+      <span class="brandRole">{{ 'HERO.KICKER' | translate }}</span>
+    </div>
     <nav class="nav" [attr.aria-label]="'ARIA.SECTIONS' | translate">
       <a class="navlink" href="#about">{{ 'NAV.ABOUT' | translate }}</a>
       <a class="navlink" href="#experience">{{ 'NAV.EXPERIENCE' | translate }}</a>
       <a class="navlink" href="#works">{{ 'NAV.WORKS' | translate }}</a>
       <a class="navlink" href="#courses">{{ 'NAV.COURSES' | translate }}</a>
+      <a class="navlink navlink--cta" href="#contact">{{ 'NAV.CONTACT' | translate }}</a>
       <app-language-switcher />
     </nav>
-    <!-- Mobile Menu -->
     <app-mobile-menu />
   </header>
 
-  <section class="about" id="about">
-    <div class="avatar" aria-hidden="true">
-      <img class="avatarImg" [src]="about().avatarSrc" [alt]="about().avatarAlt" />
-    </div>
+  <!-- ===== HERO WITH VIDEO ===== -->
+  <section class="hero" id="about">
+    <div class="heroContent">
+      <div class="heroText">
+        <div class="kicker">{{ 'HERO.KICKER' | translate }}</div>
+        <h1 class="heroTitle">
+          {{ 'HERO.GREETING' | translate }}
+          <span class="heroName">{{ about().name }}.</span>
+        </h1>
+        <p class="heroLead">{{ about().title }}</p>
+        <p class="heroDesc">{{ about().lead }}</p>
 
-    <div class="hero">
-      <div class="kicker">{{ 'HERO.KICKER' | translate }}</div>
-      <h1 class="heroTitle">{{ 'HERO.GREETING' | translate }} {{ about().name }}.</h1>
-      <p class="heroLead">{{ about().title }}</p>
-      <p class="heroText">{{ about().lead }}</p>
-    </div>
-
-    <div class="aboutGrid">
-      <div class="aboutMain">
-        <h2 class="statement">{{ about().statement }}</h2>
-        <div class="socialSection">
-          <p class="socialLabel">{{ 'SOCIAL.FIND_ME' | translate }}</p>
+        <div class="heroActions">
+          <a class="btnPrimary" href="#contact">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="M2 7l10 7 10-7" />
+            </svg>
+            {{ 'NAV.CONTACT' | translate }}
+          </a>
           <a
-            class="socialLink"
+            class="btnOutline"
             href="https://www.linkedin.com/in/kacper-kubit-707862224/"
             target="_blank"
             rel="noopener noreferrer"
@@ -41,216 +75,262 @@
                 d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"
               />
             </svg>
-            <span class="socialLinkText">{{ 'SOCIAL.LINKEDIN' | translate }}</span>
+            {{ 'SOCIAL.LINKEDIN' | translate }}
           </a>
         </div>
       </div>
 
-      <div class="aboutCards">
-        <h2 class="skillsTitle">{{ 'SKILLS.TITLE' | translate }}</h2>
-        @for (section of stackSections(); track section.title; let i = $index) {
-        <section class="stackCard" [attr.aria-labelledby]="'stackSectionTitle-' + i">
-          <h3 class="stackCardTitle" [id]="'stackSectionTitle-' + i">{{ section.title }}</h3>
-          <ul class="stackList">
-            @for (item of section.items; track item.label) {
-            <li class="stackItem">
-              <span class="stackIcon" aria-hidden="true">
-                @switch (item.icon) { @case ('angular') {
-                <svg
-                  class="iconSvg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M12 2l8 4v8c0 5-4 8-8 8s-8-3-8-8V6l8-4z" />
-                  <path d="M9.5 14.5L12 7l2.5 7.5" />
-                  <path d="M10.4 12.2h3.2" />
-                </svg>
-                } @case ('ui') {
-                <svg
-                  class="iconSvg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path
-                    d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6z"
-                  />
-                  <path d="M8 8h8" />
-                  <path d="M8 12h5" />
-                  <path d="M8 16h6" />
-                </svg>
-                } @case ('state') {
-                <svg
-                  class="iconSvg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M7 7h10v10H7z" />
-                  <path d="M7 12h10" />
-                  <path d="M12 7v10" />
-                </svg>
-                } @case ('desktop') {
-                <svg
-                  class="iconSvg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path
-                    d="M4 5h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"
-                  />
-                  <path d="M8 21h8" />
-                  <path d="M12 18v3" />
-                </svg>
-                } @case ('lang') {
-                <svg
-                  class="iconSvg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M8 7h8" />
-                  <path d="M9 7c0 6-3 10-6 12" />
-                  <path d="M15 7c0 6 3 10 6 12" />
-                  <path d="M8 13h8" />
-                </svg>
-                } @case ('tools') {
-                <svg
-                  class="iconSvg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path
-                    d="M14.7 6.3a4 4 0 0 0-5.4 5.4L4 17v3h3l5.3-5.3a4 4 0 0 0 5.4-5.4l-2.2 2.2-2.8-2.8 2-2.4z"
-                  />
-                </svg>
-                } @case ('ai') {
-                <svg
-                  class="iconSvg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M9 2v3" />
-                  <path d="M15 2v3" />
-                  <path d="M9 19v3" />
-                  <path d="M15 19v3" />
-                  <path d="M2 9h3" />
-                  <path d="M2 15h3" />
-                  <path d="M19 9h3" />
-                  <path d="M19 15h3" />
-                  <path d="M7 7h10v10H7z" />
-                </svg>
-                } @case ('e2e') {
-                <svg
-                  class="iconSvg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M10 13a5 5 0 0 1 0-7l1-1a5 5 0 0 1 7 7l-1 1" />
-                  <path d="M14 11a5 5 0 0 1 0 7l-1 1a5 5 0 0 1-7-7l1-1" />
-                </svg>
-                } @case ('unit') {
-                <svg
-                  class="iconSvg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M9 3h6l1 2h4v4l-2 1v6l2 1v4h-4l-1 2H9l-1-2H4v-4l2-1V10L4 9V5h4l1-2z" />
-                  <path d="M9 12l2 2 4-4" />
-                </svg>
-                } @case ('backend') {
-                <svg
-                  class="iconSvg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M4 7c0-2 4-3 8-3s8 1 8 3-4 3-8 3-8-1-8-3z" />
-                  <path d="M4 7v5c0 2 4 3 8 3s8-1 8-3V7" />
-                  <path d="M4 12v5c0 2 4 3 8 3s8-1 8-3v-5" />
-                </svg>
-                } @case ('db') {
-                <svg
-                  class="iconSvg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M4 6c0-2 4-3 8-3s8 1 8 3-4 3-8 3-8-1-8-3z" />
-                  <path d="M4 6v6c0 2 4 3 8 3s8-1 8-3V6" />
-                  <path d="M4 12v6c0 2 4 3 8 3s8-1 8-3v-6" />
-                </svg>
-                } @case ('docker') {
-                <svg
-                  class="iconSvg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M3 14h18" />
-                  <path d="M5 14v3a3 3 0 0 0 3 3h8a4 4 0 0 0 4-4v-2" />
-                  <path d="M7 10h3v4H7z" />
-                  <path d="M11 10h3v4h-3z" />
-                  <path d="M15 10h3v4h-3z" />
-                  <path d="M9 7h3v3H9z" />
-                </svg>
-                } }
-              </span>
-              <span class="stackText">{{ item.label }}</span>
-            </li>
-            }
-          </ul>
-        </section>
-        }
+      <div class="heroVisual">
+        <div class="videoWrapper">
+          <video
+            #heroVideo
+            class="heroVideo"
+            autoplay
+            loop
+            muted
+            playsinline
+            [attr.aria-label]="about().avatarAlt"
+          >
+            <source src="/profile/avatar-optimized.mp4" type="video/mp4" />
+          </video>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- ===== ABOUT / STATEMENT ===== -->
+  <section class="about">
+    <div class="aboutInner">
+      <div class="aboutLabel">
+        <span class="aboutLabelDot"></span>
+        <span>{{ 'NAV.ABOUT' | translate }}</span>
+      </div>
+      <blockquote class="statement">{{ about().statement }}</blockquote>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="skills">
+    <h2 class="sectionTitle">{{ 'SKILLS.TITLE' | translate }}</h2>
+    <div class="skillsGrid">
+      @for (section of stackSections(); track section.title; let i = $index) {
+        <section class="stackCard" [attr.aria-labelledby]="'stackSectionTitle-' + i">
+          <h3 class="stackCardTitle" [id]="'stackSectionTitle-' + i">{{ section.title }}</h3>
+          <ul class="stackList">
+            @for (item of section.items; track item.label) {
+              <li class="stackItem">
+                <span class="stackIcon" aria-hidden="true">
+                  @switch (item.icon) {
+                    @case ('angular') {
+                      <svg
+                        class="iconSvg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M12 2l8 4v8c0 5-4 8-8 8s-8-3-8-8V6l8-4z" />
+                        <path d="M9.5 14.5L12 7l2.5 7.5" />
+                        <path d="M10.4 12.2h3.2" />
+                      </svg>
+                    }
+                    @case ('ui') {
+                      <svg
+                        class="iconSvg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6z"
+                        />
+                        <path d="M8 8h8" />
+                        <path d="M8 12h5" />
+                        <path d="M8 16h6" />
+                      </svg>
+                    }
+                    @case ('state') {
+                      <svg
+                        class="iconSvg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M7 7h10v10H7z" />
+                        <path d="M7 12h10" />
+                        <path d="M12 7v10" />
+                      </svg>
+                    }
+                    @case ('desktop') {
+                      <svg
+                        class="iconSvg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          d="M4 5h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"
+                        />
+                        <path d="M8 21h8" />
+                        <path d="M12 18v3" />
+                      </svg>
+                    }
+                    @case ('lang') {
+                      <svg
+                        class="iconSvg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M8 7h8" />
+                        <path d="M9 7c0 6-3 10-6 12" />
+                        <path d="M15 7c0 6 3 10 6 12" />
+                        <path d="M8 13h8" />
+                      </svg>
+                    }
+                    @case ('tools') {
+                      <svg
+                        class="iconSvg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          d="M14.7 6.3a4 4 0 0 0-5.4 5.4L4 17v3h3l5.3-5.3a4 4 0 0 0 5.4-5.4l-2.2 2.2-2.8-2.8 2-2.4z"
+                        />
+                      </svg>
+                    }
+                    @case ('ai') {
+                      <svg
+                        class="iconSvg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M9 2v3" />
+                        <path d="M15 2v3" />
+                        <path d="M9 19v3" />
+                        <path d="M15 19v3" />
+                        <path d="M2 9h3" />
+                        <path d="M2 15h3" />
+                        <path d="M19 9h3" />
+                        <path d="M19 15h3" />
+                        <path d="M7 7h10v10H7z" />
+                      </svg>
+                    }
+                    @case ('e2e') {
+                      <svg
+                        class="iconSvg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M10 13a5 5 0 0 1 0-7l1-1a5 5 0 0 1 7 7l-1 1" />
+                        <path d="M14 11a5 5 0 0 1 0 7l-1 1a5 5 0 0 1-7-7l1-1" />
+                      </svg>
+                    }
+                    @case ('unit') {
+                      <svg
+                        class="iconSvg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          d="M9 3h6l1 2h4v4l-2 1v6l2 1v4h-4l-1 2H9l-1-2H4v-4l2-1V10L4 9V5h4l1-2z"
+                        />
+                        <path d="M9 12l2 2 4-4" />
+                      </svg>
+                    }
+                    @case ('backend') {
+                      <svg
+                        class="iconSvg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M4 7c0-2 4-3 8-3s8 1 8 3-4 3-8 3-8-1-8-3z" />
+                        <path d="M4 7v5c0 2 4 3 8 3s8-1 8-3V7" />
+                        <path d="M4 12v5c0 2 4 3 8 3s8-1 8-3v-5" />
+                      </svg>
+                    }
+                    @case ('db') {
+                      <svg
+                        class="iconSvg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M4 6c0-2 4-3 8-3s8 1 8 3-4 3-8 3-8-1-8-3z" />
+                        <path d="M4 6v6c0 2 4 3 8 3s8-1 8-3V6" />
+                        <path d="M4 12v6c0 2 4 3 8 3s8-1 8-3v-6" />
+                      </svg>
+                    }
+                    @case ('docker') {
+                      <svg
+                        class="iconSvg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M3 14h18" />
+                        <path d="M5 14v3a3 3 0 0 0 3 3h8a4 4 0 0 0 4-4v-2" />
+                        <path d="M7 10h3v4H7z" />
+                        <path d="M11 10h3v4h-3z" />
+                        <path d="M15 10h3v4h-3z" />
+                        <path d="M9 7h3v3H9z" />
+                      </svg>
+                    }
+                  }
+                </span>
+                <span class="stackText">{{ item.label }}</span>
+              </li>
+            }
+          </ul>
+        </section>
+      }
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
   <section class="experience" id="experience">
     <div class="section-head">
-      <h2 class="h2">{{ 'EXPERIENCE_SECTION.TITLE' | translate }}</h2>
+      <h2 class="sectionTitle">{{ 'EXPERIENCE_SECTION.TITLE' | translate }}</h2>
       <div class="expBadge" [attr.aria-label]="'ARIA.TOTAL_EXPERIENCE' | translate">
         <div class="expBadgeLabel">{{ 'EXPERIENCE_SECTION.TOTAL_LABEL' | translate }}</div>
         <div class="expBadgeValue">{{ totalExperience() }}</div>
@@ -260,37 +340,37 @@
     <div class="expGrid">
       <div class="timeline" [attr.aria-label]="'ARIA.TIMELINE' | translate">
         @for (e of experience(); track e.id) {
-        <article class="expItem">
-          <div class="expTop">
-            <div class="expRole">{{ e.role }}</div>
-            <div class="expPeriod">{{ e.period }}</div>
-          </div>
-          <div class="expCompany">{{ e.company }}</div>
+          <article class="expItem">
+            <div class="expTop">
+              <div class="expRole">{{ e.role }}</div>
+              <div class="expPeriod">{{ e.period }}</div>
+            </div>
+            <div class="expCompany">{{ e.company }}</div>
 
-          <ul class="expList">
-            @for (h of e.highlights; track h) {
-            <li>{{ h }}</li>
-            }
-          </ul>
-        </article>
+            <ul class="expList">
+              @for (h of e.highlights; track h) {
+                <li>{{ h }}</li>
+              }
+            </ul>
+          </article>
         }
       </div>
     </div>
   </section>
 
+  <!-- ===== WORKS ===== -->
   <section class="section works" id="works">
     <div class="section-head">
-      <h1 class="h2">{{ 'WORKS_SECTION.TITLE' | translate }}</h1>
+      <h2 class="sectionTitle">{{ 'WORKS_SECTION.TITLE' | translate }}</h2>
     </div>
-
     <app-works-grid [items]="works" />
   </section>
 
+  <!-- ===== COURSES ===== -->
   <section class="section courses" id="courses">
     <div class="section-head">
-      <h2 class="h2">{{ 'COURSES_SECTION.TITLE' | translate }}</h2>
+      <h2 class="sectionTitle">{{ 'COURSES_SECTION.TITLE' | translate }}</h2>
     </div>
-
     <app-courses-grid [courses]="courses" />
   </section>
 </div>

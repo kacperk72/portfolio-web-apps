@@ -90,14 +90,14 @@
       "COVER_ALT": "Podgląd dashboardu AutoPuls"
     },
     "APP_3": {
-      "TITLE": "My Web App #3 - coming soon",
-      "DESCRIPTION": "Wkrótce.",
-      "COVER_ALT": "Abstract cover image"
+      "TITLE": "Shopping List",
+      "DESCRIPTION": "Prosta apilikacja do tworzenia listy zakupów zapisywanej w localStorage.",
+      "COVER_ALT": "Podgląd aplikacji Shopping List"
     },
     "APP_4": {
-      "TITLE": "My Web App #4 - coming soon",
-      "DESCRIPTION": "Wkrótce.",
-      "COVER_ALT": "Abstract cover image"
+      "TITLE": "Fit Seats",
+      "DESCRIPTION": "Aplikacja do zarządzania miejscami przy stołach na weselu",
+      "COVER_ALT": "Podgląd aplikacji Fit Seats"
     }
   },
   "COURSES_SECTION": {

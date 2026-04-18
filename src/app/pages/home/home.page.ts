@@ -5,6 +5,9 @@ import {
   effect,
   signal,
   inject,
+  viewChild,
+  ElementRef,
+  afterNextRender,
 } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { WorksGridComponent } from '../../features/works/works-grid/works-grid.component';
@@ -33,7 +36,27 @@ export class HomePage {
 
   private readonly translationsLoaded = signal<boolean>(false);
 
+  readonly heroVideo = viewChild<ElementRef<HTMLVideoElement>>('heroVideo');
+  readonly splashVideo = viewChild<ElementRef<HTMLVideoElement>>('splashVideo');
+
+  readonly splashVisible = signal(true);
+  readonly splashFading = signal(false);
+
   constructor() {
+    afterNextRender(() => {
+      const video = this.heroVideo()?.nativeElement;
+      if (video) {
+        video.muted = true;
+        video.play().catch(() => {});
+      }
+
+      const splash = this.splashVideo()?.nativeElement;
+      if (splash) {
+        splash.muted = true;
+        splash.play().catch(() => {});
+        splash.addEventListener('ended', () => this.splashFading.set(true), { once: true });
+      }
+    });
     // Wait for translations to load
     this.translate.get('HERO.NAME').subscribe(() => {
       this.translationsLoaded.set(true);
@@ -44,6 +67,12 @@ export class HomePage {
       this.translationsLoaded.set(false);
       setTimeout(() => this.translationsLoaded.set(true), 50);
     });
+  }
+
+  onSplashDone(): void {
+    if (this.splashFading()) {
+      this.splashVisible.set(false);
+    }
   }
 
   protected readonly totalExperience = computed(() => {

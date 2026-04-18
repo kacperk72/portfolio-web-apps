@@ -1,29 +1,14 @@
 .footer {
-  background-image: url('/works/cover-01.svg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   position: relative;
-  color: #e0e0e0;
+  color: var(--text);
   padding: 4rem 2rem 2rem;
-  margin-top: 6rem;
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-color: rgba(26, 26, 26, 0.7);
-    z-index: 0;
-  }
-
-  > * {
-    position: relative;
-    z-index: 1;
-  }
+  margin-top: 4rem;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
 
   @media (max-width: 768px) {
     padding: 3rem 1.5rem 1.5rem;
-    margin-top: 4rem;
+    margin-top: 3rem;
   }
 }
 
@@ -52,7 +37,7 @@
   font-size: 2rem;
   font-weight: 700;
   margin: 0;
-  color: #ffffff;
+  color: var(--text);
 
   @media (max-width: 768px) {
     font-size: 1.75rem;
@@ -70,7 +55,7 @@
   align-items: center;
   gap: 0.5rem;
   margin: 0;
-  color: #b0b0b0;
+  color: var(--muted);
   font-size: 1rem;
 }
 
@@ -78,18 +63,18 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #b0b0b0;
+  color: var(--muted);
   text-decoration: none;
   transition: color 0.2s ease;
   font-size: 1rem;
 
   &:hover,
   &:focus-visible {
-    color: #ffffff;
+    color: var(--text);
   }
 
   &:focus-visible {
-    outline: 2px solid #4a9eff;
+    outline: 2px solid var(--accent);
     outline-offset: 2px;
     border-radius: 4px;
   }
@@ -114,7 +99,7 @@
   font-size: 1.25rem;
   font-weight: 600;
   margin: 0;
-  color: #ffffff;
+  color: var(--text);
 }
 
 .social-links {
@@ -130,20 +115,22 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background-color: #2a2a2a;
-  color: #b0b0b0;
+  background: var(--bg);
+  color: var(--muted);
   text-decoration: none;
+  border: 1px solid var(--border);
   transition: all 0.2s ease;
 
   &:hover,
   &:focus-visible {
-    background-color: #3a3a3a;
-    color: #ffffff;
+    background: var(--accent-subtle);
+    color: var(--accent);
+    border-color: var(--accent);
     transform: translateY(-2px);
   }
 
   &:focus-visible {
-    outline: 2px solid #4a9eff;
+    outline: 2px solid var(--accent);
     outline-offset: 2px;
   }
 }
@@ -157,12 +144,12 @@
   max-width: 1200px;
   margin: 0 auto;
   padding-top: 2rem;
-  border-top: 1px solid #2a2a2a;
+  border-top: 1px solid var(--border);
   text-align: center;
 }
 
 .footer-copyright {
   margin: 0;
-  color: #808080;
+  color: var(--muted);
   font-size: 0.875rem;
 }

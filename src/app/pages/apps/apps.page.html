@@ -1,0 +1,54 @@
+<div class="apps-shell">
+  <header class="header">
+    <h1 class="title">Apps</h1>
+    <span class="count">{{ apps.length }}</span>
+  </header>
+
+  <div class="grid">
+    @for (app of apps; track app.name) {
+      <a
+        class="card"
+        [class.card--tall]="app.span === 'tall'"
+        [class.card--wide]="app.span === 'wide'"
+        [class.card--has-cover]="!!app.coverSrc"
+        [class.card--no-cover]="!app.coverSrc"
+        [href]="app.href"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <!-- Cover image -->
+        @if (app.coverSrc) {
+          <div class="card__cover">
+            <img [src]="app.coverSrc" [alt]="app.name" loading="lazy" />
+          </div>
+        } @else {
+          <div class="card__cover card__cover--placeholder">
+            <span class="card__initials" [style.color]="app.accent || '#999'">{{
+              app.name.charAt(0)
+            }}</span>
+          </div>
+        }
+
+        <!-- Info (label, name, arrow) -->
+        <div class="card__info">
+          <div class="card__head">
+            <span class="card__label">{{ app.label }}</span>
+            <svg
+              class="card__arrow"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M7 17L17 7" />
+              <path d="M7 7h10v10" />
+            </svg>
+          </div>
+          <span class="card__name" [style.color]="app.accent || null">{{ app.name }}</span>
+        </div>
+      </a>
+    }
+  </div>
+</div>
