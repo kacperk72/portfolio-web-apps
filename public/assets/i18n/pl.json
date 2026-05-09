@@ -104,6 +104,16 @@
     "TITLE": "Kursy"
   },
   "COURSES": {
+    "TENXDEVS": {
+      "TITLE": "10xDevs 3.0",
+      "DESCRIPTION": "5-tygodniowy kurs AI-Native Software Engineering prowadzony przez Przemka Smyrdka i Marcina Czarkowskiego (Przeprogramowani). Praca z agentami AI (Claude Code, Cursor), Context Engineering, MCP, automatyzacja workflow, modernizacja kodu legacy oraz wykorzystanie AI w pracy zespołowej. ",
+      "IMAGE_ALT": "Logo kursu 10xDevs"
+    },
+    "UMIEJETNOSCI_JUTRA": {
+      "TITLE": "Umiejętności Jutra: AI 3.0",
+      "DESCRIPTION": "Bezpłatny program szkoleniowy Google i SGH skupiony na praktycznym wykorzystaniu sztucznej inteligencji w biznesie. Ponad 25 godzin webinarów i ćwiczeń prowadzonych przez ekspertów Google, SGH oraz praktyków biznesu. Zakończony certyfikatem z wdrażania AI dla rozwoju biznesu.",
+      "IMAGE_ALT": "Logo programu Umiejętności Jutra AI"
+    },
     "WEB_DEV": {
       "TITLE": "Tworzenie stron WWW",
       "DESCRIPTION": "Zaawansowany CSS, JavaScript, Bootstrap",

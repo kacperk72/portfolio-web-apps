@@ -4,15 +4,15 @@ import {
   APP_INITIALIZER,
 } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { provideHttpClient } from '@angular/common/http';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, provideHttpClient } from '@angular/common/http';
+import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import { routes } from './app.routes';
+import { CacheBustingTranslateLoader } from './i18n-loader';
 
 export function initializeApp(translate: TranslateService) {
   return () => {
-    translate.setDefaultLang('pl');
+    translate.setFallbackLang('pl');
     return translate.use('pl');
   };
 }
@@ -23,12 +23,13 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideHttpClient(),
     TranslateModule.forRoot({
-      defaultLanguage: 'pl',
+      fallbackLang: 'pl',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (http: HttpClient) => new CacheBustingTranslateLoader(http),
+        deps: [HttpClient],
+      },
     }).providers!,
-    provideTranslateHttpLoader({
-      prefix: './assets/i18n/',
-      suffix: '.json',
-    }),
     {
       provide: APP_INITIALIZER,
       useFactory: initializeApp,

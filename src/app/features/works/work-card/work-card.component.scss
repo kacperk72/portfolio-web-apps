@@ -3,78 +3,224 @@
   height: 100%;
 }
 
+:host(.card-host--tall) {
+  grid-row: span 2;
+}
+
+:host(.card-host--wide) {
+  grid-column: span 2;
+}
+
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
+  border-radius: 18px;
   text-decoration: none;
-  color: inherit;
+  color: var(--text);
+  overflow: hidden;
   height: 100%;
-  transition: transform 200ms ease, box-shadow 200ms ease;
+  min-height: 130px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
 
   &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    border-color: color-mix(in srgb, var(--accent) 50%, var(--border));
+  }
+
+  &:active {
+    transform: scale(0.97);
   }
 
   &:focus-visible {
     outline: 2px solid var(--accent);
-    outline-offset: 4px;
+    outline-offset: 2px;
+  }
+
+  &--tall {
+    min-height: 280px;
+  }
+
+  &--wide {
+    min-height: 110px;
   }
 }
 
-.cardMedia {
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-  background: color-mix(in srgb, var(--surface) 95%, transparent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 1px solid var(--border);
-}
-
-.cardImage {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  padding: 1rem;
-  transition: transform 200ms ease;
-}
-
-.card:hover .cardImage {
-  transform: scale(1.02);
-}
-
-.cardBody {
-  padding: 1.5rem;
-  flex: 1;
+// ===== MOBILE: info on top, cover at bottom =====
+.card__info {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  padding: 14px;
+  flex: 0 0 auto;
+  order: 1;
+  gap: 8px;
 }
 
-.cardTitle {
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin: 0;
+.card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.card__name {
+  display: block;
+  font-size: 1.45rem;
+  font-weight: 720;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
   color: var(--text);
-  line-height: 1.3;
+  flex: 1;
+  min-width: 0;
 }
 
-.cardDescription {
-  font-size: 0.9375rem;
-  line-height: 1.6;
-  color: var(--text-secondary);
+.card__arrow {
+  width: 13px;
+  height: 13px;
+  color: var(--muted);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.card__desc {
   margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-@media (max-width: 900px) {
+.card__cover {
+  order: 2;
+  margin-top: auto;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--surface) 96%, var(--text));
+
+  img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    max-height: 140px;
+  }
+}
+
+.card--tall .card__cover img {
+  max-height: 180px;
+}
+
+// ===== SMALL PHONES =====
+@media (max-width: 360px) {
   .card {
-    grid-column: 1 / -1;
-    grid-row: auto;
+    border-radius: 14px;
+    min-height: 110px;
+
+    &--tall {
+      min-height: 240px;
+    }
+  }
+
+  .card__info {
+    padding: 12px;
+  }
+
+  .card__name {
+    font-size: 1.2rem;
+  }
+
+  .card__desc {
+    font-size: 0.75rem;
+  }
+}
+
+// ===== LARGER PHONES =====
+@media (min-width: 420px) {
+  .card {
+    border-radius: 20px;
+  }
+
+  .card__info {
+    padding: 16px;
+  }
+
+  .card__name {
+    font-size: 1.5rem;
+  }
+
+  .card__cover img {
+    max-height: 160px;
+  }
+
+  .card--tall .card__cover img {
+    max-height: 200px;
+  }
+}
+
+// ===== DESKTOP: cover on top, info below (uniform grid) =====
+@media (min-width: 768px) {
+  :host(.card-host--tall) {
+    grid-row: span 1;
+  }
+
+  :host(.card-host--wide) {
+    grid-column: span 1;
+  }
+
+  .card {
+    min-height: auto;
+    border-radius: 16px;
+
+    &--tall,
+    &--wide {
+      min-height: auto;
+    }
+  }
+
+  .card__cover {
+    order: 1;
+    aspect-ratio: 4 / 3;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      max-height: none;
+    }
+  }
+
+  .card--tall .card__cover img {
+    max-height: none;
+  }
+
+  .card__info {
+    order: 2;
+    padding: 14px 16px 16px;
+    gap: 6px;
+  }
+
+  .card__name {
+    font-size: 1rem;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+  }
+
+  .card__arrow {
+    width: 12px;
+    height: 12px;
+    margin-top: 2px;
+  }
+
+  .card__desc {
+    font-size: 0.78rem;
+    -webkit-line-clamp: 2;
   }
 }

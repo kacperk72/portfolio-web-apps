@@ -1,58 +1,31 @@
-::ng-deep {
-  .p-carousel {
-    .p-carousel-content {
-      padding: 1rem 0;
-    }
+:host {
+  display: block;
+}
 
-    .p-carousel-indicators {
-      padding: 1rem 0;
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  grid-auto-flow: dense;
+}
 
-      .p-carousel-indicator button {
-        width: 2rem;
-        height: 0.5rem;
-        background-color: color-mix(in srgb, var(--border) 80%, transparent);
-        border-radius: 4px;
-        transition: all 0.3s;
-
-        &:hover {
-          background-color: color-mix(in srgb, var(--text) 60%, transparent);
-        }
-      }
-
-      .p-carousel-indicator.p-active button {
-        background-color: var(--accent);
-      }
-    }
-
-    .p-carousel-prev,
-    .p-carousel-next {
-      width: 3rem;
-      height: 3rem;
-      color: var(--text);
-      background: color-mix(in srgb, var(--surface) 90%, transparent);
-      border: 1px solid var(--border);
-      border-radius: 50%;
-      transition: all 0.3s;
-
-      &:hover {
-        background: var(--surface);
-        border-color: var(--accent);
-        color: var(--accent);
-      }
-
-      &:focus-visible {
-        outline: 2px solid var(--accent);
-        outline-offset: 2px;
-      }
-    }
+@media (min-width: 420px) {
+  .grid {
+    gap: 12px;
   }
 }
 
-.carousel-item {
-  padding: 0 1rem;
-  height: 100%;
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    grid-auto-flow: row;
+  }
+}
 
-  app-work-card {
-    height: 100%;
+@media (min-width: 1080px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
   }
 }

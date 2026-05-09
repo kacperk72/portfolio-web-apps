@@ -1,20 +1,36 @@
 <a
   class="card"
+  [class.card--tall]="cardSpan() === 'tall'"
+  [class.card--wide]="cardSpan() === 'wide'"
   [href]="item().href"
   [attr.target]="target()"
   [attr.rel]="rel()"
-  [ngStyle]="gridStyle()"
 >
-  <div class="cardMedia">
+  <div class="card__cover">
     <img
-      class="cardImage"
       [src]="item().coverSrc"
       [attr.alt]="item().coverAltKey ? (item().coverAltKey | translate) : ''"
       loading="lazy"
     />
   </div>
-  <div class="cardBody">
-    <h3 class="cardTitle">{{ item().titleKey | translate }}</h3>
-    <p class="cardDescription">{{ item().descriptionKey | translate }}</p>
+
+  <div class="card__info">
+    <div class="card__head">
+      <span class="card__name">{{ item().titleKey | translate }}</span>
+      <svg
+        class="card__arrow"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M7 17L17 7" />
+        <path d="M7 7h10v10" />
+      </svg>
+    </div>
+    <p class="card__desc">{{ item().descriptionKey | translate }}</p>
   </div>
 </a>

@@ -2,6 +2,22 @@ import { CourseItem } from './courses.model';
 
 export const COURSES: CourseItem[] = [
   {
+    id: '10xdevs',
+    titleKey: 'COURSES.TENXDEVS.TITLE',
+    descriptionKey: 'COURSES.TENXDEVS.DESCRIPTION',
+    imageSrc: '/courses/10xdevs.png',
+    imageAltKey: 'COURSES.TENXDEVS.IMAGE_ALT',
+    url: 'https://www.10xdevs.pl/',
+  },
+  {
+    id: 'umiejetnosci-jutra',
+    titleKey: 'COURSES.UMIEJETNOSCI_JUTRA.TITLE',
+    descriptionKey: 'COURSES.UMIEJETNOSCI_JUTRA.DESCRIPTION',
+    imageSrc: '/courses/umiejetnosci-jutra.png',
+    imageAltKey: 'COURSES.UMIEJETNOSCI_JUTRA.IMAGE_ALT',
+    url: 'https://www.sgh.waw.pl/wydarzenia/program-szkoleniowy-umiejetnosci-jutra-ai-30-zgloszenia',
+  },
+  {
     id: 'angular-performance',
     titleKey: 'COURSES.ANGULAR_PERFORMANCE.TITLE',
     descriptionKey: 'COURSES.ANGULAR_PERFORMANCE.DESCRIPTION',

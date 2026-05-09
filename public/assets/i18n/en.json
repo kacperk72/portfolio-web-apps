@@ -97,52 +97,62 @@
     "APP_4": {
       "TITLE": "My Web App #4 - coming soon",
       "DESCRIPTION": "Coming soon.",
-      "COVER_ALT": "Abstract cover image",
-      "COURSES_SECTION": {
-        "TITLE": "Completed Courses"
-      },
-      "COURSES": {
-        "WEB_DEV": {
-          "TITLE": "Web Development",
-          "DESCRIPTION": "Advanced CSS, JavaScript, Bootstrap",
-          "IMAGE_ALT": "Web development course logo"
-        },
-        "MEGAK": {
-          "TITLE": "MegaK",
-          "DESCRIPTION": "14-month course consisting of 9 stages of programming in various technologies such as JavaScript, Node, Express, TypeScript, React, NestJS, and knowledge of MySQL and MongoDB databases",
-          "IMAGE_ALT": "MegaK course logo"
-        },
-        "NODEJS": {
-          "TITLE": "NodeJS",
-          "DESCRIPTION": "13-hour NodeJS course covering Web Server, Layouts, MongoDB Database, Forms, Authentication, API, Deployment",
-          "IMAGE_ALT": "NodeJS course logo"
-        },
-        "GOOGLE_DATA": {
-          "TITLE": "Google Data Analyst",
-          "DESCRIPTION": "Exploring and Preparing your Data with BigQuery • Creating New BigQuery Datasets and Visualizing Insights • Achieving Advanced Insights with BigQuery • Applying Machine Learning to your Data with GCP",
-          "IMAGE_ALT": "Google Data Analyst course logo"
-        },
-        "GOOGLE_CLOUD": {
-          "TITLE": "Google Associate Cloud Engineer",
-          "DESCRIPTION": "Google Cloud Fundamentals: Core Infrastructure • Essential Google Cloud Infrastructure: Foundation • Essential Google Cloud Infrastructure: Core Services • Elastic Google Cloud Infrastructure: Scaling and Automation • Reliable Google Cloud Infrastructure: Design and Process",
-          "IMAGE_ALT": "Google Cloud Engineer course logo"
-        },
-        "ANGULAR_PERFORMANCE": {
-          "TITLE": "Angular Performance. Building High-Performance Angular Applications",
-          "DESCRIPTION": "Advanced course focused on optimizing Angular application performance. Covers Change Detection, OnPush, trackBy, lazy loading, bundle size optimization, tree shaking, and leveraging the latest Angular Signals techniques to create ultra-fast applications.",
-          "IMAGE_ALT": "Angular Performance course logo"
-        },
-        "ANGULAR_ADVANCED": {
-          "TITLE": "Angular – Advanced Course. SPA Web Application Framework",
-          "DESCRIPTION": "Comprehensive course on advanced Angular techniques. Routing, lazy loading modules, advanced reactive forms, dependency injection, HttpClient, RxJS operators, state management, and SPA application architecture following best practices.",
-          "IMAGE_ALT": "Advanced Angular course logo"
-        },
-        "ANGULAR_SSR": {
-          "TITLE": "Angular - Building SSR Applications. Latest Features in Angular Framework",
-          "DESCRIPTION": "Course dedicated to Server-Side Rendering in Angular. Angular Universal, hydration, SEO optimization, prerendering, transfer state, and the latest Angular features such as standalone components, inject(), input/output functions, and control flow.",
-          "IMAGE_ALT": "Angular SSR course logo"
-        }
-      }
+      "COVER_ALT": "Abstract cover image"
+    }
+  },
+  "COURSES_SECTION": {
+    "TITLE": "Completed Courses"
+  },
+  "COURSES": {
+    "TENXDEVS": {
+      "TITLE": "10xDevs 3.0",
+      "DESCRIPTION": "5-week AI-Native Software Engineering course led by Przemek Smyrdek and Marcin Czarkowski (Przeprogramowani). Working with AI agents (Claude Code, Cursor), Context Engineering, MCP, workflow automation, legacy code modernization, and team collaboration with AI. ",
+      "IMAGE_ALT": "10xDevs course logo"
+    },
+    "UMIEJETNOSCI_JUTRA": {
+      "TITLE": "Skills of Tomorrow: AI 3.0",
+      "DESCRIPTION": "Free training program by Google and SGH (Warsaw School of Economics) focused on practical use of artificial intelligence in business. Over 25 hours of webinars and exercises led by Google experts, SGH faculty, and business practitioners. Concludes with a certificate in AI Implementation for Business Development.",
+      "IMAGE_ALT": "Skills of Tomorrow AI program logo"
+    },
+    "WEB_DEV": {
+      "TITLE": "Web Development",
+      "DESCRIPTION": "Advanced CSS, JavaScript, Bootstrap",
+      "IMAGE_ALT": "Web development course logo"
+    },
+    "MEGAK": {
+      "TITLE": "MegaK",
+      "DESCRIPTION": "14-month course consisting of 9 stages of programming in various technologies such as JavaScript, Node, Express, TypeScript, React, NestJS, and knowledge of MySQL and MongoDB databases",
+      "IMAGE_ALT": "MegaK course logo"
+    },
+    "NODEJS": {
+      "TITLE": "NodeJS",
+      "DESCRIPTION": "13-hour NodeJS course covering Web Server, Layouts, MongoDB Database, Forms, Authentication, API, Deployment",
+      "IMAGE_ALT": "NodeJS course logo"
+    },
+    "GOOGLE_DATA": {
+      "TITLE": "Google Data Analyst",
+      "DESCRIPTION": "Exploring and Preparing your Data with BigQuery • Creating New BigQuery Datasets and Visualizing Insights • Achieving Advanced Insights with BigQuery • Applying Machine Learning to your Data with GCP",
+      "IMAGE_ALT": "Google Data Analyst course logo"
+    },
+    "GOOGLE_CLOUD": {
+      "TITLE": "Google Associate Cloud Engineer",
+      "DESCRIPTION": "Google Cloud Fundamentals: Core Infrastructure • Essential Google Cloud Infrastructure: Foundation • Essential Google Cloud Infrastructure: Core Services • Elastic Google Cloud Infrastructure: Scaling and Automation • Reliable Google Cloud Infrastructure: Design and Process",
+      "IMAGE_ALT": "Google Cloud Engineer course logo"
+    },
+    "ANGULAR_PERFORMANCE": {
+      "TITLE": "Angular Performance. Building High-Performance Angular Applications",
+      "DESCRIPTION": "Advanced course focused on optimizing Angular application performance. Covers Change Detection, OnPush, trackBy, lazy loading, bundle size optimization, tree shaking, and leveraging the latest Angular Signals techniques to create ultra-fast applications.",
+      "IMAGE_ALT": "Angular Performance course logo"
+    },
+    "ANGULAR_ADVANCED": {
+      "TITLE": "Angular – Advanced Course. SPA Web Application Framework",
+      "DESCRIPTION": "Comprehensive course on advanced Angular techniques. Routing, lazy loading modules, advanced reactive forms, dependency injection, HttpClient, RxJS operators, state management, and SPA application architecture following best practices.",
+      "IMAGE_ALT": "Advanced Angular course logo"
+    },
+    "ANGULAR_SSR": {
+      "TITLE": "Angular - Building SSR Applications. Latest Features in Angular Framework",
+      "DESCRIPTION": "Course dedicated to Server-Side Rendering in Angular. Angular Universal, hydration, SEO optimization, prerendering, transfer state, and the latest Angular features such as standalone components, inject(), input/output functions, and control flow.",
+      "IMAGE_ALT": "Angular SSR course logo"
     }
   },
   "FOOTER": {

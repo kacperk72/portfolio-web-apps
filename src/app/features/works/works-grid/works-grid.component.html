@@ -1,14 +1,5 @@
-<p-carousel
-  [value]="items()"
-  [numVisible]="3"
-  [numScroll]="1"
-  [circular]="true"
-  [autoplayInterval]="6000"
-  [responsiveOptions]="responsiveOptions"
->
-  <ng-template let-work #item>
-    <div class="carousel-item">
-      <app-work-card [item]="work" />
-    </div>
-  </ng-template>
-</p-carousel>
+<div class="grid">
+  @for (tile of tiles(); track tile.item.id) {
+    <app-work-card [item]="tile.item" [cardSpan]="tile.span" />
+  }
+</div>
