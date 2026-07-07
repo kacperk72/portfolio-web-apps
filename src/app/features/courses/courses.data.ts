@@ -26,6 +26,14 @@ export const COURSES: CourseItem[] = [
     url: 'https://www.comarch.pl/szkolenia/najblizsze-szkolenia/?phrase=angular',
   },
   {
+    id: 'github-copilot',
+    titleKey: 'COURSES.GITHUB_COPILOT.TITLE',
+    descriptionKey: 'COURSES.GITHUB_COPILOT.DESCRIPTION',
+    imageSrc: '/courses/copilot.png',
+    imageAltKey: 'COURSES.GITHUB_COPILOT.IMAGE_ALT',
+    url: 'https://github.com/features/copilot',
+  },
+  {
     id: 'angular-advanced',
     titleKey: 'COURSES.ANGULAR_ADVANCED.TITLE',
     descriptionKey: 'COURSES.ANGULAR_ADVANCED.DESCRIPTION',

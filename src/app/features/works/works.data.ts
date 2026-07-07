@@ -12,6 +12,16 @@ export const WORKS: WorkItem[] = [
   //   grid: { colSpan: 7, rowSpan: 6 },
   // },
   {
+    id: 'app-5',
+    titleKey: 'WORKS.APP_5.TITLE',
+    descriptionKey: 'WORKS.APP_5.DESCRIPTION',
+    href: 'https://wedding-planner-kubitk.pl',
+    target: 'new-tab',
+    coverSrc: '/works/wedding-planner.png',
+    coverAltKey: 'WORKS.APP_5.COVER_ALT',
+    grid: { colSpan: 4, rowSpan: 6 },
+  },
+  {
     id: 'app-1',
     titleKey: 'WORKS.APP_1.TITLE',
     descriptionKey: 'WORKS.APP_1.DESCRIPTION',

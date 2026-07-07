@@ -135,6 +135,7 @@ export class HomePage {
           this.translate.instant('JOBS.COMARCH_CLOUD.HIGHLIGHT_3'),
           this.translate.instant('JOBS.COMARCH_CLOUD.HIGHLIGHT_4'),
           this.translate.instant('JOBS.COMARCH_CLOUD.HIGHLIGHT_5'),
+          this.translate.instant('JOBS.COMARCH_CLOUD.HIGHLIGHT_6'),
         ],
       },
       {

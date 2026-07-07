@@ -14,12 +14,12 @@
     "VIEW_COURSE": "View course details"
   },
   "HERO": {
-    "KICKER": "FRONT-END DEVELOPER ANGULAR",
+    "KICKER": "TEAM LEADER & FRONTEND DEVELOPER — ANGULAR",
     "GREETING": "Hi, I'm",
     "NAME": "Kacper",
-    "TITLE": "I create modern web applications with Angular.",
-    "LEAD": "I graduated with a Master's degree in Applied Computer Science from Jagiellonian University. Currently, I work as a Front-end Developer at Comarch, where I develop a reporting system for time tracking and report generation — tailored to the needs of both small and large companies.",
-    "STATEMENT": "I work daily with the latest versions of Angular, focusing on quality, performance, and modern UX. I have experience in ERP sector projects and co-create scalable, user-friendly solutions. I passionately follow the development of artificial intelligence and implement its capabilities into everyday work to continuously improve productivity and efficiency of delivered systems.",
+    "TITLE": "I lead a frontend team and build modern web apps with Angular.",
+    "LEAD": "I'm a Team Leader and Frontend Developer with nearly 4 years of experience and an MSc in Applied Computer Science from Jagiellonian University. At Comarch I lead a frontend team and develop a time-tracking and reporting system tailored to both small and large companies — pairing agile leadership with an AI-native approach to delivery.",
+    "STATEMENT": "I look beyond pure technical execution, combining agile leadership with a strong product and business mindset to deliver solutions that create real value for users and the organization. I'm passionate about AI-Native Development: I scale team-wide use of Claude Code and LLMs in the daily workflow, build autonomous agents for automated code review, and drive AI-assisted testing with MCP and Playwright. My focus is continuous delivery, modernizing scalable frontend architectures, and high-performing collaboration between design, backend, and product.",
     "AVATAR_ALT": "Profile photo"
   },
   "SOCIAL": {
@@ -42,8 +42,8 @@
     "E2E_TESTS": "E2E Tests: Playwright (with Agents)",
     "UNIT_TESTS": "Unit Tests: Vitest",
     "BACKEND": "Node.js, Express.js, Nest.js",
-    "DATABASE": "MongoDB, Supabase, MySQL",
-    "DOCKER": "Docker"
+    "DATABASE": "MongoDB, PostgreSQL, Supabase, MySQL",
+    "DOCKER": "Docker, Kubernetes"
   },
   "EXPERIENCE_SECTION": {
     "TITLE": "My Experience",
@@ -55,14 +55,15 @@
   },
   "JOBS": {
     "COMARCH_CLOUD": {
-      "ROLE": "Frontend Developer — Comarch Cloud (TNA)",
+      "ROLE": "Team Leader & Frontend Developer — Comarch (TNA)",
       "COMPANY": "Comarch",
       "PERIOD": "Mar 2023 — Present",
-      "HIGHLIGHT_1": "I collaborate daily with UX and backend teams, ensuring refined UX and meeting business needs.",
-      "HIGHLIGHT_2": "I modernize and refactor the application: library updates, architecture improvements, and code maintainability.",
-      "HIGHLIGHT_3": "I modernized the project (Angular 14 → 20): migration to standalone components, OnPush, and Signals; reduced dependency on zone.js.",
-      "HIGHLIGHT_4": "I co-create a product for a new client; working in a dynamically developing project.",
-      "HIGHLIGHT_5": "I consciously use AI tools (GitHub Copilot, ChatGPT, Google Gemini) to increase work efficiency and quality."
+      "HIGHLIGHT_1": "Team leadership & agile delivery: I shifted the team from classic Scrum to continuous-flow 'Taxi Teams' on Kanban, and together with Product Management I turn quarterly roadmaps into daily work and coordinate steady delivery.",
+      "HIGHLIGHT_2": "AI-Native Development: I engineered and scaled team-wide adoption of Claude Code and LLMs, built autonomous agents for automated code review, and set up AI-driven testing with MCP, Playwright, and Claude Code.",
+      "HIGHLIGHT_3": "Micro-Frontend & Nx Monorepo: I contributed to an internal enterprise admin dashboard built on a micro-frontend architecture with an Nx monorepo.",
+      "HIGHLIGHT_4": "Large-scale migration Angular 14 → 21: standalone components, zone.js replaced with Signals, and an enforced OnPush change-detection strategy to minimize re-renders.",
+      "HIGHLIGHT_5": "CI/CD & modernization: I own the frontend technical roadmap — CI/CD pipeline optimization, library upgrades, and architectural refactoring for scalability and clean code.",
+      "HIGHLIGHT_6": "Cross-functional collaboration: I partner with UX/UI, backend, and QA to translate product requirements into high-performance, user-centric features."
     },
     "COMARCH_HEALTHCARE": {
       "ROLE": "Frontend Developer — Comarch Healthcare",
@@ -90,14 +91,19 @@
       "COVER_ALT": "AutoPuls dashboard preview"
     },
     "APP_3": {
-      "TITLE": "My Web App #3 - coming soon",
-      "DESCRIPTION": "Coming soon.",
-      "COVER_ALT": "Abstract cover image"
+      "TITLE": "Shopping List",
+      "DESCRIPTION": "A simple app for creating shopping lists saved in localStorage.",
+      "COVER_ALT": "Shopping List application preview"
     },
     "APP_4": {
-      "TITLE": "My Web App #4 - coming soon",
-      "DESCRIPTION": "Coming soon.",
-      "COVER_ALT": "Abstract cover image"
+      "TITLE": "Fit Seats",
+      "DESCRIPTION": "An app for managing table seating arrangements at a wedding.",
+      "COVER_ALT": "Fit Seats application preview"
+    },
+    "APP_5": {
+      "TITLE": "Wedding Planner",
+      "DESCRIPTION": "An application for planning and organizing a wedding — managing guests, budget, tasks, and the big-day timeline.",
+      "COVER_ALT": "Wedding Planner application preview"
     }
   },
   "COURSES_SECTION": {
@@ -143,6 +149,11 @@
       "TITLE": "Angular Performance. Building High-Performance Angular Applications",
       "DESCRIPTION": "Advanced course focused on optimizing Angular application performance. Covers Change Detection, OnPush, trackBy, lazy loading, bundle size optimization, tree shaking, and leveraging the latest Angular Signals techniques to create ultra-fast applications.",
       "IMAGE_ALT": "Angular Performance course logo"
+    },
+    "GITHUB_COPILOT": {
+      "TITLE": "GitHub Copilot Enterprise Training",
+      "DESCRIPTION": "Hands-on intensive training on AI-assisted software engineering with GitHub Copilot in an enterprise setting — effective prompting, Copilot Chat, code generation and refactoring, and embedding AI into the team development workflow.",
+      "IMAGE_ALT": "GitHub Copilot course logo"
     },
     "ANGULAR_ADVANCED": {
       "TITLE": "Angular – Advanced Course. SPA Web Application Framework",
