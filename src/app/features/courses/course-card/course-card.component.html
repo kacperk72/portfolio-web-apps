@@ -6,6 +6,9 @@
       [alt]="course().imageAltKey | translate"
       loading="lazy"
     />
+    @if (course().inProgress) {
+      <span class="cardBadge">{{ 'COURSES_SECTION.IN_PROGRESS' | translate }}</span>
+    }
   </div>
   <div class="cardBody">
     <h3 class="cardTitle">{{ course().titleKey | translate }}</h3>

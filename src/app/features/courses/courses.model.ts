@@ -5,4 +5,6 @@ export interface CourseItem {
   imageSrc: string;
   imageAltKey: string;
   url: string;
+  /** Kurs, który jeszcze trwa — karta dostaje plakietkę „W trakcie”. */
+  inProgress?: boolean;
 }

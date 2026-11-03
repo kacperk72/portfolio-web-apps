@@ -31,10 +31,10 @@ export class AppsPage {
       span: 'normal',
     },
     {
-      name: 'Grave App',
+      name: 'znajdzgroby.pl',
       label: 'Cmentarz',
-      href: 'https://darkgrey-octopus-623910.hostingersite.com/map',
-      coverSrc: '/works/grave-app.png',
+      href: 'https://znajdzgroby.pl',
+      coverSrc: '/works/znajdzgroby/start.webp',
       span: 'normal',
     },
     {

@@ -1,64 +1,81 @@
-import { WorkItem } from './works.model';
+import { ProjectFeature, ProjectShot, ProjectShowcase } from './works.model';
 
-export const WORKS: WorkItem[] = [
-  // {
-  //   id: 'portfolio-hub',
-  //   titleKey: 'WORKS.PORTFOLIO_HUB.TITLE',
-  //   year: '2025',
-  //   href: '/',
-  //   target: 'same-tab',
-  //   coverSrc: '/works/cover-01.svg',
-  //   coverAltKey: 'WORKS.PORTFOLIO_HUB.COVER_ALT',
-  //   grid: { colSpan: 7, rowSpan: 6 },
-  // },
+const features = (prefix: string, count: number): ProjectFeature[] =>
+  Array.from({ length: count }, (_, i) => ({
+    titleKey: `${prefix}.FEATURE_${i + 1}.TITLE`,
+    textKey: `${prefix}.FEATURE_${i + 1}.TEXT`,
+  }));
+
+const shots = (
+  dir: string,
+  prefix: string,
+  names: string[],
+  width: number,
+  height: number,
+  withThumbs = false
+): ProjectShot[] =>
+  names.map((name) => ({
+    src: `/works/${dir}/${name}.webp`,
+    thumbSrc: withThumbs ? `/works/${dir}/${name}-thumb.webp` : undefined,
+    captionKey: `${prefix}.SHOTS.${name.toUpperCase()}`,
+    width,
+    height,
+  }));
+
+export const PROJECTS: ProjectShowcase[] = [
   {
-    id: 'app-5',
-    titleKey: 'WORKS.APP_5.TITLE',
-    descriptionKey: 'WORKS.APP_5.DESCRIPTION',
+    id: 'wedding-planner',
+    titleKey: 'WORKS.WEDDING_PLANNER.TITLE',
+    kickerKey: 'WORKS.WEDDING_PLANNER.KICKER',
+    leadKey: 'WORKS.WEDDING_PLANNER.LEAD',
     href: 'https://wedding-planner-kubitk.pl',
-    target: 'new-tab',
-    coverSrc: '/works/wedding-planner.png',
-    coverAltKey: 'WORKS.APP_5.COVER_ALT',
-    grid: { colSpan: 4, rowSpan: 6 },
+    domain: 'wedding-planner-kubitk.pl',
+    layout: 'desktop',
+    shots: shots(
+      'wedding-planner',
+      'WORKS.WEDDING_PLANNER',
+      ['pulpit', 'goscie', 'rozsadzenie', 'umowy', 'druk'],
+      1280,
+      800,
+      true
+    ),
+    features: features('WORKS.WEDDING_PLANNER', 6),
+    stack: [
+      'Angular 21',
+      'Signals',
+      'Cloudflare Workers',
+      'Cloudflare D1',
+      'Better Auth',
+      'Resend',
+      'Playwright E2E',
+      'GitHub Actions CI/CD',
+    ],
   },
   {
-    id: 'app-1',
-    titleKey: 'WORKS.APP_1.TITLE',
-    descriptionKey: 'WORKS.APP_1.DESCRIPTION',
-    href: 'https://darkgrey-octopus-623910.hostingersite.com',
-    target: 'new-tab',
-    coverSrc: '/works/grave-app.png',
-    coverAltKey: 'WORKS.APP_1.COVER_ALT',
-    grid: { colSpan: 4, rowSpan: 6 },
-  },
-  {
-    id: 'app-2',
-    titleKey: 'WORKS.APP_2.TITLE',
-    descriptionKey: 'WORKS.APP_2.DESCRIPTION',
-    href: 'https://salmon-fly-255466.hostingersite.com/dashboard',
-    target: 'new-tab',
-    coverSrc: '/works/app-car-dashboard.svg',
-    coverAltKey: 'WORKS.APP_2.COVER_ALT',
-    grid: { colSpan: 4, rowSpan: 6 },
-  },
-  {
-    id: 'app-3',
-    titleKey: 'WORKS.APP_3.TITLE',
-    descriptionKey: 'WORKS.APP_3.DESCRIPTION',
-    href: 'https://peachpuff-jaguar-714134.hostingersite.com/',
-    target: 'new-tab',
-    coverSrc: '/works/app-shopping-list.png',
-    coverAltKey: 'WORKS.APP_3.COVER_ALT',
-    grid: { colSpan: 4, rowSpan: 6 },
-  },
-  {
-    id: 'app-4',
-    titleKey: 'WORKS.APP_4.TITLE',
-    descriptionKey: 'WORKS.APP_4.DESCRIPTION',
-    href: 'https://green-ferret-271547.hostingersite.com/',
-    target: 'new-tab',
-    coverSrc: '/works/app-fit-seats.png',
-    coverAltKey: 'WORKS.APP_4.COVER_ALT',
-    grid: { colSpan: 4, rowSpan: 6 },
+    id: 'znajdzgroby',
+    titleKey: 'WORKS.ZNAJDZGROBY.TITLE',
+    kickerKey: 'WORKS.ZNAJDZGROBY.KICKER',
+    leadKey: 'WORKS.ZNAJDZGROBY.LEAD',
+    href: 'https://znajdzgroby.pl',
+    domain: 'znajdzgroby.pl',
+    layout: 'mobile',
+    shots: shots(
+      'znajdzgroby',
+      'WORKS.ZNAJDZGROBY',
+      ['welcome', 'start', 'details', 'map', 'route'],
+      780,
+      1688
+    ),
+    features: features('WORKS.ZNAJDZGROBY', 6),
+    stack: [
+      'Angular 21',
+      'PWA / Service Worker',
+      'Dexie (IndexedDB)',
+      'Leaflet',
+      'Cloudflare Workers',
+      'D1 + KV',
+      'Resend',
+      'GitHub Actions CI/CD',
+    ],
   },
 ];

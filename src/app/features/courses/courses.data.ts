@@ -2,6 +2,15 @@ import { CourseItem } from './courses.model';
 
 export const COURSES: CourseItem[] = [
   {
+    id: 'ai-product-heroes',
+    titleKey: 'COURSES.AI_PRODUCT_HEROES.TITLE',
+    descriptionKey: 'COURSES.AI_PRODUCT_HEROES.DESCRIPTION',
+    imageSrc: '/courses/ai-product-heroes.jpg',
+    imageAltKey: 'COURSES.AI_PRODUCT_HEROES.IMAGE_ALT',
+    url: 'https://www.aiproductheroes.pl/',
+    inProgress: true,
+  },
+  {
     id: '10xdevs',
     titleKey: 'COURSES.TENXDEVS.TITLE',
     descriptionKey: 'COURSES.TENXDEVS.DESCRIPTION',

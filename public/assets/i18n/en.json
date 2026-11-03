@@ -18,8 +18,8 @@
     "GREETING": "Hi, I'm",
     "NAME": "Kacper",
     "TITLE": "I lead a frontend team and build modern web apps with Angular.",
-    "LEAD": "I'm a Team Leader and Frontend Developer with nearly 4 years of experience and an MSc in Applied Computer Science from Jagiellonian University. At Comarch I lead a frontend team and develop a time-tracking and reporting system tailored to both small and large companies — pairing agile leadership with an AI-native approach to delivery.",
-    "STATEMENT": "I look beyond pure technical execution, combining agile leadership with a strong product and business mindset to deliver solutions that create real value for users and the organization. I'm passionate about AI-Native Development: I scale team-wide use of Claude Code and LLMs in the daily workflow, build autonomous agents for automated code review, and drive AI-assisted testing with MCP and Playwright. My focus is continuous delivery, modernizing scalable frontend architectures, and high-performing collaboration between design, backend, and product.",
+    "LEAD": "I'm a Team Leader and Frontend Developer with over 4 years of experience and an MSc in Applied Computer Science from Jagiellonian University. At Comarch I lead a frontend team and develop a time-tracking and reporting system tailored to both small and large companies — pairing agile leadership, work planning and estimation with an AI-native approach to delivery.",
+    "STATEMENT": "I look beyond pure technical execution — I see the product through a business lens too: I plan the work, estimate new features and decide together with Product Management what brings the most value to users and the organization. I'm passionate about AI-Native Development: I scale team-wide use of Claude Code and LLMs in the daily workflow, build autonomous agents for automated code review, and drive AI-assisted testing with MCP and Playwright. My focus is continuous delivery, modernizing scalable frontend architectures and infrastructure (Kubernetes), and great collaboration between design, backend, and product.",
     "AVATAR_ALT": "Profile photo"
   },
   "SOCIAL": {
@@ -32,9 +32,11 @@
     "NON_COMMERCIAL": "Non-commercial"
   },
   "STACK": {
-    "ANGULAR": "Angular v14 – v21",
+    "ANGULAR": "Angular v14 – v22",
     "UI_LIBS": "Angular Material, PrimeNG, Chart.js",
     "STATE": "NgRx, RxJS, Signals",
+    "NX": "Nx Monorepo, Micro-Frontend",
+    "KUBERNETES": "Kubernetes, Docker (migrating apps to K8s)",
     "DESKTOP": "Electron, WebSockets",
     "LANGUAGES": "JavaScript, TypeScript, HTML, CSS, SCSS",
     "TOOLS": "GIT (GitLab/GitHub), JIRA, CI/CD, Google Workspace, Figma",
@@ -42,8 +44,7 @@
     "E2E_TESTS": "E2E Tests: Playwright (with Agents)",
     "UNIT_TESTS": "Unit Tests: Vitest",
     "BACKEND": "Node.js, Express.js, Nest.js",
-    "DATABASE": "MongoDB, PostgreSQL, Supabase, MySQL",
-    "DOCKER": "Docker, Kubernetes"
+    "DATABASE": "MongoDB, PostgreSQL, Supabase, MySQL"
   },
   "EXPERIENCE_SECTION": {
     "TITLE": "My Experience",
@@ -58,12 +59,13 @@
       "ROLE": "Team Leader & Frontend Developer — Comarch (TNA)",
       "COMPANY": "Comarch",
       "PERIOD": "Mar 2023 — Present",
-      "HIGHLIGHT_1": "Team leadership & agile delivery: I shifted the team from classic Scrum to continuous-flow 'Taxi Teams' on Kanban, and together with Product Management I turn quarterly roadmaps into daily work and coordinate steady delivery.",
-      "HIGHLIGHT_2": "AI-Native Development: I engineered and scaled team-wide adoption of Claude Code and LLMs, built autonomous agents for automated code review, and set up AI-driven testing with MCP, Playwright, and Claude Code.",
-      "HIGHLIGHT_3": "Micro-Frontend & Nx Monorepo: I contributed to an internal enterprise admin dashboard built on a micro-frontend architecture with an Nx monorepo.",
-      "HIGHLIGHT_4": "Large-scale migration Angular 14 → 21: standalone components, zone.js replaced with Signals, and an enforced OnPush change-detection strategy to minimize re-renders.",
-      "HIGHLIGHT_5": "CI/CD & modernization: I own the frontend technical roadmap — CI/CD pipeline optimization, library upgrades, and architectural refactoring for scalability and clean code.",
-      "HIGHLIGHT_6": "Cross-functional collaboration: I partner with UX/UI, backend, and QA to translate product requirements into high-performance, user-centric features."
+      "HIGHLIGHT_1": "Leadership & agile delivery: I lead the frontend team — I moved it from classic Scrum to continuous-flow 'Taxi Teams' on Kanban and coordinate steady delivery across several projects at once.",
+      "HIGHLIGHT_2": "Planning, estimates & business perspective: I spend a growing share of my time planning work and estimating new features. Together with Product Management I turn quarterly roadmaps into tasks, looking at the product not only technically but also from the business side — customer value, cost and risk.",
+      "HIGHLIGHT_3": "Kubernetes migration: as Team Leader I oversaw moving all of the product's applications to Kubernetes, and I carried out the frontend migration myself.",
+      "HIGHLIGHT_4": "AI-Native Development: I engineered and scaled team-wide adoption of Claude Code and LLMs, built autonomous agents for automated code review, and set up AI-driven testing with MCP, Playwright, and Claude Code.",
+      "HIGHLIGHT_5": "Several projects in parallel: I keep developing Comarch TNA while working on other projects — including an internal admin dashboard built on a micro-frontend architecture in an Nx monorepo.",
+      "HIGHLIGHT_6": "Modernization Angular 14 → 22: standalone components, zone.js replaced with Signals and an OnPush strategy; I also own the frontend technical roadmap — CI/CD pipelines, library upgrades, and refactoring for scalability.",
+      "HIGHLIGHT_7": "Cross-functional collaboration: I partner with UX/UI, backend, and QA to translate product requirements into high-performance, user-centric features."
     },
     "COMARCH_HEALTHCARE": {
       "ROLE": "Frontend Developer — Comarch Healthcare",
@@ -77,39 +79,96 @@
     }
   },
   "WORKS_SECTION": {
-    "TITLE": "Projects"
+    "TITLE": "Projects",
+    "INTRO": "Two products of my own that I design, build and run in production — from the idea and mockups, through architecture, to CI/CD and real users.",
+    "VISIT": "Open",
+    "GALLERY": "Choose an app screen",
+    "STACK": "Tech stack"
   },
   "WORKS": {
-    "APP_1": {
-      "TITLE": "GraveMap",
-      "DESCRIPTION": "An application for recording and navigating between graves of loved ones in the cemetery.",
-      "COVER_ALT": "GraveMap application preview"
-    },
-    "APP_2": {
-      "TITLE": "AutoPuls",
-      "DESCRIPTION": "Vehicle logbook application with additional AI features.",
-      "COVER_ALT": "AutoPuls dashboard preview"
-    },
-    "APP_3": {
-      "TITLE": "Shopping List",
-      "DESCRIPTION": "A simple app for creating shopping lists saved in localStorage.",
-      "COVER_ALT": "Shopping List application preview"
-    },
-    "APP_4": {
-      "TITLE": "Fit Seats",
-      "DESCRIPTION": "An app for managing table seating arrangements at a wedding.",
-      "COVER_ALT": "Fit Seats application preview"
-    },
-    "APP_5": {
+    "WEDDING_PLANNER": {
       "TITLE": "Wedding Planner",
-      "DESCRIPTION": "An application for planning and organizing a wedding — managing guests, budget, tasks, and the big-day timeline.",
-      "COVER_ALT": "Wedding Planner application preview"
+      "KICKER": "Commercial product · app for engaged couples",
+      "LEAD": "An app where a couple plans the whole wedding together — from the guest list and RSVPs, through table seating, to vendor contracts and payment schedules. I develop it as my own commercial product: from product decisions and mockups, through architecture and the migration to Cloudflare, to production releases.",
+      "FEATURE_1": {
+        "TITLE": "Guests & RSVP",
+        "TEXT": "Guest list with relations, RSVP status, menu type and main course — with filters and sorting for even several hundred people."
+      },
+      "FEATURE_2": {
+        "TITLE": "Table seating",
+        "TEXT": "Venue plan with tables, assigning guests to seats, free-seat counter and conflict detection."
+      },
+      "FEATURE_3": {
+        "TITLE": "Contracts & installments",
+        "TEXT": "Vendors, contracts and payments (deposit, installments, final payment) with due dates and a view of upcoming expenses."
+      },
+      "FEATURE_4": {
+        "TITLE": "Place cards & table tents",
+        "TEXT": "Name place cards and table tents with the schedule and menu — PDF generated right in the browser."
+      },
+      "FEATURE_5": {
+        "TITLE": "One account for two",
+        "TEXT": "The partner joins via an e-mail invite and works on the same data; password login with e-mail confirmation and reset."
+      },
+      "FEATURE_6": {
+        "TITLE": "Dashboard & day schedule",
+        "TEXT": "Countdown to the wedding, budget, tasks and key actions on one screen, plus an hour-by-hour plan of the day."
+      },
+      "SHOTS": {
+        "PULPIT": "Dashboard",
+        "GOSCIE": "Guests & RSVP",
+        "ROZSADZENIE": "Seating",
+        "UMOWY": "Contracts & installments",
+        "DRUK": "Place cards"
+      }
+    },
+    "ZNAJDZGROBY": {
+      "TITLE": "znajdzgroby.pl",
+      "KICKER": "Own product · offline-capable PWA",
+      "LEAD": "An app that guides you to your loved ones' graves with GPS accuracy. It's the successor to GraveMap, rebuilt from the ground up: a new look, family maps shared via a link, headstone photos, a cemetery route planner and accounts. It works without signal too — data lives on the phone and syncs once the connection is back.",
+      "FEATURE_1": {
+        "TITLE": "GPS location",
+        "TEXT": "Save the spot right at the headstone with measurement accuracy, import a Google Maps pin or type in coordinates."
+      },
+      "FEATURE_2": {
+        "TITLE": "Map & navigation",
+        "TEXT": "Leaflet + OpenStreetMap with marker clustering, plus distance and direction to the selected grave."
+      },
+      "FEATURE_3": {
+        "TITLE": "Visit route",
+        "TEXT": "The shortest path through graves within a chosen radius, with a hint for the next one — perfect for All Saints' Day."
+      },
+      "FEATURE_4": {
+        "TITLE": "Family maps",
+        "TEXT": "A shared map for the whole family: access via a link, members with profiles, an owner role and change sync across phones."
+      },
+      "FEATURE_5": {
+        "TITLE": "Offline-first",
+        "TEXT": "IndexedDB (Dexie) with a change queue and a Service Worker — the app works at the cemetery even with no signal."
+      },
+      "FEATURE_6": {
+        "TITLE": "Photos & reminders",
+        "TEXT": "Headstone photos resized on the phone and available offline, plus reminders about grave fee due dates."
+      },
+      "SHOTS": {
+        "WELCOME": "Welcome",
+        "START": "Home",
+        "DETAILS": "Grave details",
+        "MAP": "Cemetery map",
+        "ROUTE": "Visit route"
+      }
     }
   },
   "COURSES_SECTION": {
-    "TITLE": "Completed Courses"
+    "TITLE": "Courses",
+    "IN_PROGRESS": "In progress"
   },
   "COURSES": {
+    "AI_PRODUCT_HEROES": {
+      "TITLE": "AI Product Heroes 3.0",
+      "DESCRIPTION": "A 6-week cohort course by BRAVE, led by Piotr Kacała (ex-CTPO at Displate) and Wojtek Strzałkowski (ex-Head of Product at GOG.com). The whole AI-powered product process: discovery and user interviews, prototyping with Claude Code and spec-driven development, launching with analytics (PostHog, AARRR, North Star Metric), a business case for an AI pilot in an organization, and a Demo Day with a working prototype.",
+      "IMAGE_ALT": "AI Product Heroes course leaders"
+    },
     "TENXDEVS": {
       "TITLE": "10xDevs 3.0",
       "DESCRIPTION": "5-week AI-Native Software Engineering course led by Przemek Smyrdek and Marcin Czarkowski (Przeprogramowani). Working with AI agents (Claude Code, Cursor), Context Engineering, MCP, workflow automation, legacy code modernization, and team collaboration with AI. ",

@@ -10,8 +10,8 @@ import {
   afterNextRender,
 } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { WorksGridComponent } from '../../features/works/works-grid/works-grid.component';
-import { WORKS } from '../../features/works/works.data';
+import { ProjectShowcaseComponent } from '../../features/works/project-showcase/project-showcase.component';
+import { PROJECTS } from '../../features/works/works.data';
 import { LanguageSwitcherComponent } from '../../shared/language-switcher/language-switcher.component';
 import { CoursesGridComponent } from '../../features/courses/courses-grid/courses-grid.component';
 import { COURSES } from '../../features/courses/courses.data';
@@ -20,7 +20,7 @@ import { MobileMenuComponent } from '../../shared/mobile-menu/mobile-menu.compon
 @Component({
   selector: 'app-home-page',
   imports: [
-    WorksGridComponent,
+    ProjectShowcaseComponent,
     CoursesGridComponent,
     TranslateModule,
     LanguageSwitcherComponent,
@@ -89,6 +89,8 @@ export class HomePage {
           { label: this.translate.instant('STACK.ANGULAR'), icon: 'angular' as const },
           { label: this.translate.instant('STACK.UI_LIBS'), icon: 'ui' as const },
           { label: this.translate.instant('STACK.STATE'), icon: 'state' as const },
+          { label: this.translate.instant('STACK.NX'), icon: 'nx' as const },
+          { label: this.translate.instant('STACK.KUBERNETES'), icon: 'k8s' as const },
           { label: this.translate.instant('STACK.DESKTOP'), icon: 'desktop' as const },
           { label: this.translate.instant('STACK.LANGUAGES'), icon: 'lang' as const },
           { label: this.translate.instant('STACK.TOOLS'), icon: 'tools' as const },
@@ -102,7 +104,6 @@ export class HomePage {
         items: [
           { label: this.translate.instant('STACK.BACKEND'), icon: 'backend' as const },
           { label: this.translate.instant('STACK.DATABASE'), icon: 'db' as const },
-          { label: this.translate.instant('STACK.DOCKER'), icon: 'docker' as const },
         ],
       },
     ];
@@ -136,6 +137,7 @@ export class HomePage {
           this.translate.instant('JOBS.COMARCH_CLOUD.HIGHLIGHT_4'),
           this.translate.instant('JOBS.COMARCH_CLOUD.HIGHLIGHT_5'),
           this.translate.instant('JOBS.COMARCH_CLOUD.HIGHLIGHT_6'),
+          this.translate.instant('JOBS.COMARCH_CLOUD.HIGHLIGHT_7'),
         ],
       },
       {
@@ -154,7 +156,7 @@ export class HomePage {
     ];
   });
 
-  protected readonly works = WORKS;
+  protected readonly projects = PROJECTS;
   protected readonly courses = COURSES;
 
   private formatDuration(start: Date, end: Date): string {
@@ -203,9 +205,10 @@ type StackIcon =
   | 'backend'
   | 'db'
   | 'desktop'
-  | 'docker'
   | 'e2e'
+  | 'k8s'
   | 'lang'
+  | 'nx'
   | 'state'
   | 'tools'
   | 'ui'

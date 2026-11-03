@@ -18,8 +18,8 @@
     "GREETING": "Cześć, jestem",
     "NAME": "Kacper",
     "TITLE": "Prowadzę zespół frontendowy i tworzę nowoczesne aplikacje webowe w Angularze.",
-    "LEAD": "Jestem Team Leaderem i Frontend Developerem z blisko 4-letnim doświadczeniem oraz magistrem Informatyki Stosowanej na Uniwersytecie Jagiellońskim. W Comarch prowadzę zespół frontendowy i rozwijam system do ewidencji czasu pracy i generowania raportów — dopasowany zarówno do małych, jak i dużych firm — łącząc zwinne przywództwo z podejściem AI-native do dostarczania oprogramowania.",
-    "STATEMENT": "Wychodzę poza samą realizację techniczną — łączę zwinne przywództwo z silnym nastawieniem produktowym i biznesowym, aby dostarczać rozwiązania tworzące realną wartość dla użytkowników i organizacji. Z pasją rozwijam AI-Native Development: skaluję wykorzystanie Claude Code i modeli LLM w codziennej pracy zespołu, buduję autonomiczne agenty do automatycznego code review oraz rozwijam testowanie wspierane AI (MCP, Playwright). Skupiam się na ciągłym dostarczaniu, modernizacji skalowalnych architektur frontendowych i wysokiej jakości współpracy między designem, backendem i produktem.",
+    "LEAD": "Jestem Team Leaderem i Frontend Developerem z ponad 4-letnim doświadczeniem oraz magistrem Informatyki Stosowanej na Uniwersytecie Jagiellońskim. W Comarch prowadzę zespół frontendowy i rozwijam system do ewidencji czasu pracy i generowania raportów — dopasowany zarówno do małych, jak i dużych firm. Łączę zwinne przywództwo, planowanie i wyceny prac z podejściem AI-native do dostarczania oprogramowania.",
+    "STATEMENT": "Wychodzę poza samą realizację techniczną — patrzę na produkt także oczami biznesu: planuję prace, wyceniam nowe funkcjonalności i razem z Product Managementem decyduję, co da użytkownikom i organizacji największą wartość. Z pasją rozwijam AI-Native Development: skaluję wykorzystanie Claude Code i modeli LLM w codziennej pracy zespołu, buduję autonomiczne agenty do automatycznego code review oraz rozwijam testowanie wspierane AI (MCP, Playwright). Skupiam się na ciągłym dostarczaniu, modernizacji skalowalnych architektur frontendowych i infrastruktury (Kubernetes) oraz na dobrej współpracy designu, backendu i produktu.",
     "AVATAR_ALT": "Zdjęcie profilowe"
   },
   "SOCIAL": {
@@ -32,9 +32,11 @@
     "NON_COMMERCIAL": "Niekomercyjnie"
   },
   "STACK": {
-    "ANGULAR": "Angular v14 – v21",
+    "ANGULAR": "Angular v14 – v22",
     "UI_LIBS": "Angular Material, PrimeNG, Chart.js",
     "STATE": "NgRx, RxJS, Signals",
+    "NX": "Nx Monorepo, Micro-Frontend",
+    "KUBERNETES": "Kubernetes, Docker (migracja aplikacji na K8s)",
     "DESKTOP": "Electron, WebSockets",
     "LANGUAGES": "JavaScript, TypeScript, HTML, CSS, SCSS",
     "TOOLS": "GIT (GitLab/GitHub), JIRA, CI/CD, Google Workspace, Figma",
@@ -42,8 +44,7 @@
     "E2E_TESTS": "Testy E2E: Playwright (z Agentami)",
     "UNIT_TESTS": "Testy jednostkowe: Vitest",
     "BACKEND": "Node.js, Express.js, Nest.js",
-    "DATABASE": "MongoDB, PostgreSQL, Supabase, MySQL",
-    "DOCKER": "Docker, Kubernetes"
+    "DATABASE": "MongoDB, PostgreSQL, Supabase, MySQL"
   },
   "EXPERIENCE_SECTION": {
     "TITLE": "Moje doświadczenie",
@@ -58,12 +59,13 @@
       "ROLE": "Team Leader & Frontend Developer — Comarch (TNA)",
       "COMPANY": "Comarch",
       "PERIOD": "mar 2023 — obecnie",
-      "HIGHLIGHT_1": "Przywództwo i zwinne dostarczanie: przeprowadziłem zespół z klasycznego Scruma na przepływowe „Taxi Teams” na Kanbanie; wspólnie z Product Management przekładam kwartalne roadmapy na codzienne zadania i koordynuję stabilne dostarczanie.",
-      "HIGHLIGHT_2": "AI-Native Development: wdrożyłem i wyskalowałem w zespole wykorzystanie Claude Code i modeli LLM, zbudowałem autonomiczne agenty do automatycznego code review oraz uruchomiłem testowanie wspierane AI (MCP, Playwright, Claude Code).",
-      "HIGHLIGHT_3": "Micro-Frontend i Nx Monorepo: współtworzyłem wewnętrzny dashboard administracyjny w architekturze micro-frontend opartej na monorepo Nx.",
-      "HIGHLIGHT_4": "Migracja na dużą skalę Angular 14 → 21: standalone components, zastąpienie zone.js przez Signals oraz egzekwowanie strategii OnPush w celu ograniczenia przerysowań.",
-      "HIGHLIGHT_5": "CI/CD i modernizacja: odpowiadam za techniczną roadmapę frontendu — optymalizację pipeline’ów CI/CD, aktualizacje bibliotek i refaktoryzację architektury pod skalowalność i czysty kod.",
-      "HIGHLIGHT_6": "Współpraca cross-functional: współpracuję z UX/UI, backendem i QA, przekładając wymagania produktowe na wydajne, zorientowane na użytkownika funkcje."
+      "HIGHLIGHT_1": "Przywództwo i zwinne dostarczanie: prowadzę zespół frontendowy — przeprowadziłem go z klasycznego Scruma na przepływowe „Taxi Teams” na Kanbanie i koordynuję stabilne dostarczanie w kilku projektach jednocześnie.",
+      "HIGHLIGHT_2": "Planowanie, wyceny i perspektywa biznesowa: coraz więcej czasu poświęcam na planowanie prac i wyceny nowych funkcjonalności. Razem z Product Managementem przekładam kwartalne roadmapy na zadania i patrzę na produkt nie tylko od strony technicznej, ale też biznesowej — wartości dla klienta, kosztu i ryzyka.",
+      "HIGHLIGHT_3": "Migracja na Kubernetesa: jako Team Leader nadzorowałem przeniesienie wszystkich aplikacji produktu na Kubernetesa, a migrację frontendu przeprowadziłem samodzielnie.",
+      "HIGHLIGHT_4": "AI-Native Development: wdrożyłem i wyskalowałem w zespole wykorzystanie Claude Code i modeli LLM, zbudowałem autonomiczne agenty do automatycznego code review oraz uruchomiłem testowanie wspierane AI (MCP, Playwright, Claude Code).",
+      "HIGHLIGHT_5": "Kilka projektów równolegle: dalej rozwijam Comarch TNA, a równolegle pracuję przy innych projektach — m.in. wewnętrznym dashboardzie administracyjnym w architekturze micro-frontend opartej na monorepo Nx.",
+      "HIGHLIGHT_6": "Modernizacja Angular 14 → 22: standalone components, zastąpienie zone.js przez Signals i strategia OnPush; odpowiadam też za techniczną roadmapę frontendu — pipeline’y CI/CD, aktualizacje bibliotek i refaktoryzację pod skalowalność.",
+      "HIGHLIGHT_7": "Współpraca cross-functional: współpracuję z UX/UI, backendem i QA, przekładając wymagania produktowe na wydajne, zorientowane na użytkownika funkcje."
     },
     "COMARCH_HEALTHCARE": {
       "ROLE": "Frontend Developer — Comarch Healthcare",
@@ -77,39 +79,96 @@
     }
   },
   "WORKS_SECTION": {
-    "TITLE": "Projekty"
+    "TITLE": "Projekty",
+    "INTRO": "Dwa własne produkty, które projektuję, buduję i utrzymuję na produkcji — od pomysłu i makiet, przez architekturę, po CI/CD i prawdziwych użytkowników.",
+    "VISIT": "Otwórz",
+    "GALLERY": "Wybierz ekran aplikacji",
+    "STACK": "Technologie"
   },
   "WORKS": {
-    "APP_1": {
-      "TITLE": "GraveMap",
-      "DESCRIPTION": "Aplikacja do zapisywania i nawigowania między grobami bliskich na cmentarzu.",
-      "COVER_ALT": "Podgląd aplikacji GraveMap"
-    },
-    "APP_2": {
-      "TITLE": "AutoPuls",
-      "DESCRIPTION": "Aplikacja dziennik pojazdu z dodatkowymi funkcjami AI.",
-      "COVER_ALT": "Podgląd dashboardu AutoPuls"
-    },
-    "APP_3": {
-      "TITLE": "Shopping List",
-      "DESCRIPTION": "Prosta apilikacja do tworzenia listy zakupów zapisywanej w localStorage.",
-      "COVER_ALT": "Podgląd aplikacji Shopping List"
-    },
-    "APP_4": {
-      "TITLE": "Fit Seats",
-      "DESCRIPTION": "Aplikacja do zarządzania miejscami przy stołach na weselu",
-      "COVER_ALT": "Podgląd aplikacji Fit Seats"
-    },
-    "APP_5": {
+    "WEDDING_PLANNER": {
       "TITLE": "Wedding Planner",
-      "DESCRIPTION": "Aplikacja do planowania i organizacji wesela — zarządzanie gośćmi, budżetem, zadaniami i harmonogramem dnia ślubu.",
-      "COVER_ALT": "Podgląd aplikacji Wedding Planner"
+      "KICKER": "Produkt komercyjny · aplikacja dla par młodych",
+      "LEAD": "Aplikacja, w której para młoda planuje całe wesele we dwoje — od listy gości i RSVP, przez rozsadzenie przy stołach, po umowy z podwykonawcami i harmonogram rat. Rozwijam ją jako własny produkt komercyjny: od decyzji produktowych i makiet, przez architekturę i migrację na Cloudflare, po wdrożenia na produkcję.",
+      "FEATURE_1": {
+        "TITLE": "Goście i RSVP",
+        "TEXT": "Lista gości z relacjami, statusem potwierdzenia, rodzajem menu i daniem — z filtrami i sortowaniem nawet dla kilkuset osób."
+      },
+      "FEATURE_2": {
+        "TITLE": "Rozsadzenie przy stołach",
+        "TEXT": "Plan sali ze stołami, przypisywanie gości do miejsc, licznik wolnych miejsc i wykrywanie konfliktów."
+      },
+      "FEATURE_3": {
+        "TITLE": "Umowy i harmonogram rat",
+        "TEXT": "Kontrahenci, umowy i płatności (zaliczka, raty, płatność końcowa) z terminami oraz podglądem najbliższych wydatków."
+      },
+      "FEATURE_4": {
+        "TITLE": "Druk winietek i trójkątów",
+        "TEXT": "Winietki z imieniem i nazwiskiem oraz trójkąty na stoły z harmonogramem i menu — PDF generowany w przeglądarce."
+      },
+      "FEATURE_5": {
+        "TITLE": "Wspólne konto dla dwojga",
+        "TEXT": "Partner dołącza przez zaproszenie e-mail i pracuje na tych samych danych; logowanie hasłem z potwierdzeniem i resetem przez e-mail."
+      },
+      "FEATURE_6": {
+        "TITLE": "Pulpit i harmonogram dnia",
+        "TEXT": "Odliczanie do ślubu, budżet, zadania i najważniejsze akcje na jednym ekranie oraz godzinowy program wesela."
+      },
+      "SHOTS": {
+        "PULPIT": "Pulpit",
+        "GOSCIE": "Goście i RSVP",
+        "ROZSADZENIE": "Rozsadzenie",
+        "UMOWY": "Umowy i raty",
+        "DRUK": "Druk winietek"
+      }
+    },
+    "ZNAJDZGROBY": {
+      "TITLE": "znajdzgroby.pl",
+      "KICKER": "Własny produkt · PWA działająca offline",
+      "LEAD": "Aplikacja, która prowadzi do grobów bliskich z dokładnością GPS. To następca GraveMap, przebudowany od podstaw: nowy wygląd, rodzinne mapy współdzielone przez link, zdjęcia nagrobków, trasa po cmentarzu i konta. Działa także bez zasięgu — dane żyją w telefonie i synchronizują się, gdy wróci internet.",
+      "FEATURE_1": {
+        "TITLE": "Lokalizacja z GPS",
+        "TEXT": "Zapis miejsca przy nagrobku z dokładnością pomiaru, import pinezki z Google Maps albo wpisanie współrzędnych."
+      },
+      "FEATURE_2": {
+        "TITLE": "Mapa i nawigacja",
+        "TEXT": "Mapa Leaflet + OpenStreetMap z grupowaniem pinezek oraz odległością i kierunkiem do wybranego grobu."
+      },
+      "FEATURE_3": {
+        "TITLE": "Trasa odwiedzin",
+        "TEXT": "Najkrótsza droga przez groby w wybranym promieniu z podpowiedzią następnego grobu — idealna na Wszystkich Świętych."
+      },
+      "FEATURE_4": {
+        "TITLE": "Rodzinne mapy",
+        "TEXT": "Wspólna mapa dla całej rodziny: dostęp przez link, członkowie z profilami, rola założyciela i synchronizacja zmian między telefonami."
+      },
+      "FEATURE_5": {
+        "TITLE": "Offline-first",
+        "TEXT": "IndexedDB (Dexie) z kolejką zmian i Service Worker — aplikacja działa na cmentarzu nawet bez zasięgu."
+      },
+      "FEATURE_6": {
+        "TITLE": "Zdjęcia i przypomnienia",
+        "TEXT": "Zdjęcia nagrobków zmniejszane w telefonie i dostępne offline oraz przypomnienia o terminie opłaty za grób."
+      },
+      "SHOTS": {
+        "WELCOME": "Powitanie",
+        "START": "Start",
+        "DETAILS": "Szczegóły grobu",
+        "MAP": "Mapa cmentarza",
+        "ROUTE": "Trasa odwiedzin"
+      }
     }
   },
   "COURSES_SECTION": {
-    "TITLE": "Kursy"
+    "TITLE": "Kursy",
+    "IN_PROGRESS": "W trakcie"
   },
   "COURSES": {
+    "AI_PRODUCT_HEROES": {
+      "TITLE": "AI Product Heroes 3.0",
+      "DESCRIPTION": "6-tygodniowy kurs kohortowy od BRAVE, prowadzony przez Piotra Kacałę (ex-CTPO Displate) i Wojtka Strzałkowskiego (ex-Head of Product GOG.com). Cały proces budowy produktu z AI: discovery i rozmowy z użytkownikami, prototypowanie z Claude Code i spec-driven development, wdrożenie z analityką (PostHog, AARRR, North Star Metric), business case pilotażu AI w organizacji i Demo Day z działającym prototypem.",
+      "IMAGE_ALT": "Prowadzący kursu AI Product Heroes"
+    },
     "TENXDEVS": {
       "TITLE": "10xDevs 3.0",
       "DESCRIPTION": "5-tygodniowy kurs AI-Native Software Engineering prowadzony przez Przemka Smyrdka i Marcina Czarkowskiego (Przeprogramowani). Praca z agentami AI (Claude Code, Cursor), Context Engineering, MCP, automatyzacja workflow, modernizacja kodu legacy oraz wykorzystanie AI w pracy zespołowej. ",
