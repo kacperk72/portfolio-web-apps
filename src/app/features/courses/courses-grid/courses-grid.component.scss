@@ -1,5 +1,11 @@
 ::ng-deep {
   .p-carousel {
+    // Motyw PrimeNG daje tu overflow: auto — cień strzałek wychodził poza krawędź
+    // i pojawiał się poziomy pasek przewijania. Slajdy przycina .p-carousel-viewport.
+    .p-carousel-content-container {
+      overflow: visible;
+    }
+
     .p-carousel-content {
       align-items: center;
       padding: 1rem 0;
@@ -58,6 +64,7 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        box-sizing: border-box;
         width: 3.5rem;
         height: 3.5rem;
         padding: 0;
@@ -69,12 +76,12 @@
         cursor: pointer;
         transition:
           border-color 0.2s,
-          color 0.2s,
-          transform 0.2s;
+          box-shadow 0.2s;
 
+        // Bez scale() — powiększony przycisk wystawał poza kontener karuzeli
         &:hover:not(:disabled) {
           border-color: var(--accent);
-          transform: scale(1.06);
+          box-shadow: 0 8px 22px -8px rgba(26, 26, 46, 0.35);
         }
 
         &:focus-visible {
