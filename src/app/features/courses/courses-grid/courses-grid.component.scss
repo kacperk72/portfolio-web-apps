@@ -1,53 +1,132 @@
 ::ng-deep {
   .p-carousel {
     .p-carousel-content {
+      align-items: center;
       padding: 1rem 0;
     }
 
-    .p-carousel-indicators {
-      padding: 1rem 0;
-
-      .p-carousel-indicator button {
-        width: 2rem;
-        height: 0.5rem;
-        background-color: color-mix(in srgb, var(--border) 80%, transparent);
-        border-radius: 4px;
-        transition: all 0.3s;
-
-        &:hover {
-          background-color: color-mix(in srgb, var(--text) 60%, transparent);
-        }
-      }
-
-      .p-carousel-indicator.p-active button {
-        background-color: var(--accent);
-      }
+    // Karty w rzędzie mają równą wysokość niezależnie od długości opisu
+    .p-carousel-items-container {
+      align-items: stretch;
     }
 
-    .p-carousel-prev,
-    .p-carousel-next {
-      width: 3rem;
-      height: 3rem;
-      color: var(--text);
-      background: color-mix(in srgb, var(--surface) 90%, transparent);
-      border: 1px solid var(--border);
-      border-radius: 50%;
-      transition: all 0.3s;
+    .p-carousel-item {
+      display: flex;
+    }
+
+    .p-carousel-indicator-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0;
+      padding: 1rem 0;
+      list-style: none;
+    }
+
+    .p-carousel-indicator-button {
+      display: block;
+      width: 2rem;
+      height: 0.5rem;
+      padding: 0;
+      border: 0;
+      border-radius: 4px;
+      background-color: color-mix(in srgb, var(--border) 80%, transparent);
+      cursor: pointer;
+      transition: background-color 0.3s;
 
       &:hover {
-        background: var(--surface);
-        border-color: var(--accent);
-        color: var(--accent);
+        background-color: color-mix(in srgb, var(--text) 60%, transparent);
       }
 
       &:focus-visible {
-        outline: 2px solid var(--accent);
+        outline: 2px solid var(--text);
         outline-offset: 2px;
+      }
+    }
+
+    .p-carousel-indicator-active .p-carousel-indicator-button {
+      background-color: var(--accent);
+    }
+
+    // PrimeNG 21 renderuje strzałki jako <p-button class="p-carousel-prev-button"> z <button> w środku
+    .p-carousel-prev-button,
+    .p-carousel-next-button {
+      flex-shrink: 0;
+
+      .p-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3.5rem;
+        height: 3.5rem;
+        padding: 0;
+        color: var(--text);
+        background: var(--surface);
+        border: 1.5px solid var(--border);
+        border-radius: 50%;
+        box-shadow: 0 6px 18px -8px rgba(26, 26, 46, 0.25);
+        cursor: pointer;
+        transition:
+          border-color 0.2s,
+          color 0.2s,
+          transform 0.2s;
+
+        &:hover:not(:disabled) {
+          border-color: var(--accent);
+          transform: scale(1.06);
+        }
+
+        &:focus-visible {
+          outline: 2px solid var(--text);
+          outline-offset: 3px;
+        }
+
+        &:disabled {
+          opacity: 0.4;
+          cursor: default;
+        }
+      }
+
+      .p-icon {
+        width: 22px;
+        height: 22px;
       }
     }
   }
 }
 
 .carousel-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   padding: 0 1rem;
+}
+
+@media (max-width: 560px) {
+  ::ng-deep .p-carousel {
+    .p-carousel-prev-button .p-button,
+    .p-carousel-next-button .p-button {
+      width: 2.75rem;
+      height: 2.75rem;
+    }
+
+    .p-carousel-prev-button .p-icon,
+    .p-carousel-next-button .p-icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    .p-carousel-indicator-list {
+      gap: 6px;
+    }
+
+    .p-carousel-indicator-button {
+      width: 1.1rem;
+    }
+  }
+
+  .carousel-item {
+    padding: 0 0.5rem;
+  }
 }
