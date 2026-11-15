@@ -1,23 +1,14 @@
-<!-- ===== MOBILE SPLASH SCREEN ===== -->
-@if (splashVisible()) {
-  <div class="splash" [class.splashFadeOut]="splashFading()" (animationend)="onSplashDone()">
-    <video
-      #splashVideo
-      class="splashVideo"
-      autoplay
-      muted
-      playsinline
-      [attr.aria-label]="about().avatarAlt"
-    >
-      <source src="/profile/avatar-optimized.mp4" type="video/mp4" />
-    </video>
-  </div>
-}
-
 <div class="page">
   <!-- ===== TOPBAR ===== -->
   <header class="topbar">
     <div class="topbarBrand">
+      <img
+        class="brandAvatar"
+        ngSrc="/profile/avatar.webp"
+        width="192"
+        height="192"
+        [alt]="about().avatarAlt"
+      />
       <span class="brandName">{{ about().name }}</span>
       <span class="brandDot"></span>
       <span class="brandRole">{{ 'HERO.KICKER' | translate }}</span>
@@ -33,7 +24,7 @@
     <app-mobile-menu />
   </header>
 
-  <!-- ===== HERO WITH VIDEO ===== -->
+  <!-- ===== HERO ===== -->
   <section class="hero" id="about">
     <div class="heroContent">
       <div class="heroText">
@@ -81,18 +72,16 @@
       </div>
 
       <div class="heroVisual">
-        <div class="videoWrapper">
-          <video
-            #heroVideo
-            class="heroVideo"
-            autoplay
-            loop
-            muted
-            playsinline
-            [attr.aria-label]="about().avatarAlt"
-          >
-            <source src="/profile/avatar-optimized.mp4" type="video/mp4" />
-          </video>
+        <div class="portrait">
+          <div class="portraitBackdrop" aria-hidden="true"></div>
+          <img
+            class="portraitImg"
+            ngSrc="/profile/portrait.webp"
+            width="880"
+            height="1085"
+            priority
+            [alt]="about().avatarAlt"
+          />
         </div>
       </div>
     </div>

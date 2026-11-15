@@ -5,10 +5,8 @@ import {
   effect,
   signal,
   inject,
-  viewChild,
-  ElementRef,
-  afterNextRender,
 } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ProjectShowcaseComponent } from '../../features/works/project-showcase/project-showcase.component';
 import { PROJECTS } from '../../features/works/works.data';
@@ -25,6 +23,7 @@ import { MobileMenuComponent } from '../../shared/mobile-menu/mobile-menu.compon
     TranslateModule,
     LanguageSwitcherComponent,
     MobileMenuComponent,
+    NgOptimizedImage,
   ],
   templateUrl: './home.page.html',
   styleUrl: './home.page.scss',
@@ -36,27 +35,7 @@ export class HomePage {
 
   private readonly translationsLoaded = signal<boolean>(false);
 
-  readonly heroVideo = viewChild<ElementRef<HTMLVideoElement>>('heroVideo');
-  readonly splashVideo = viewChild<ElementRef<HTMLVideoElement>>('splashVideo');
-
-  readonly splashVisible = signal(true);
-  readonly splashFading = signal(false);
-
   constructor() {
-    afterNextRender(() => {
-      const video = this.heroVideo()?.nativeElement;
-      if (video) {
-        video.muted = true;
-        video.play().catch(() => {});
-      }
-
-      const splash = this.splashVideo()?.nativeElement;
-      if (splash) {
-        splash.muted = true;
-        splash.play().catch(() => {});
-        splash.addEventListener('ended', () => this.splashFading.set(true), { once: true });
-      }
-    });
     // Wait for translations to load
     this.translate.get('HERO.NAME').subscribe(() => {
       this.translationsLoaded.set(true);
@@ -67,12 +46,6 @@ export class HomePage {
       this.translationsLoaded.set(false);
       setTimeout(() => this.translationsLoaded.set(true), 50);
     });
-  }
-
-  onSplashDone(): void {
-    if (this.splashFading()) {
-      this.splashVisible.set(false);
-    }
   }
 
   protected readonly totalExperience = computed(() => {
@@ -111,13 +84,12 @@ export class HomePage {
 
   protected readonly about = computed(() => {
     if (!this.translationsLoaded())
-      return { name: '', title: '', lead: '', statement: '', avatarSrc: '', avatarAlt: '' };
+      return { name: '', title: '', lead: '', statement: '', avatarAlt: '' };
     return {
       name: this.translate.instant('HERO.NAME'),
       title: this.translate.instant('HERO.TITLE'),
       lead: this.translate.instant('HERO.LEAD'),
       statement: this.translate.instant('HERO.STATEMENT'),
-      avatarSrc: '/profile/profilowe-animowane-min.png',
       avatarAlt: this.translate.instant('HERO.AVATAR_ALT'),
     };
   });
